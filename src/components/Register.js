@@ -1,8 +1,8 @@
 import React from 'react'
-import homeStyles from '../css/home.css'
+import registerStyles from '../css/register.css'
 import CssModules from 'react-css-modules'
 
-class Home extends React.Component {
+class Register extends React.Component {
     render() {
         <div>
             Domek
@@ -10,4 +10,4 @@ class Home extends React.Component {
     }
 }
 
-export default CssModules(Home, homeStyles)
+export default CssModules(Register, registerStyles)

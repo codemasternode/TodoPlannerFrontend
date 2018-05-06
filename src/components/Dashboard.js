@@ -4,9 +4,11 @@ import CssModules from 'react-css-modules'
 
 class Dashboard extends React.Component {
     render() {
-        <div>
-            Dashboard
-        </div>
+        return (
+            <div>
+                Dashboard
+            </div>
+        )
     }
 }
 

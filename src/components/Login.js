@@ -4,9 +4,11 @@ import CssModules from 'react-css-modules'
 
 class Login extends React.Component {
     render() {
-        <div>
-            Login
-        </div>
+        return (
+            <div>
+                Login
+            </div>
+        )
     }
 }
 

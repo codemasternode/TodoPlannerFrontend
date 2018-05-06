@@ -1,15 +1,15 @@
 import React from 'react'
-import homeStyles from '../css/home.css'
+import footerStyles from '../css/footer.css'
 import CssModules from 'react-css-modules'
 
-class Home extends React.Component {
+class Footer extends React.Component {
     render() {
         return (
             <div>
-                Home
+                Footer
             </div>
         )
     }
 }
 
-export default CssModules(Home, homeStyles)
+export default CssModules(Footer, footerStyles)

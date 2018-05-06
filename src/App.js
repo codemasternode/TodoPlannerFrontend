@@ -1,16 +1,30 @@
 import React, { Component } from 'react';
-import './css/App.css';
+import CssModules from 'react-css-modules'
+import CssRoot from './css/App.css'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-
+import Dashboard from './components/Dashboard'
+import Home from './components/Home'
+import Login from './components/Login'
+import Nav from './components/Nav'
+import Register from './components/Register'
+import Footer from './components/Footer'
 
 class App extends Component {
   render() {
     return (
-      <div>
-
-      </div>
+      <BrowserRouter>
+        <div>
+          <Nav />
+          <Switch>
+            <Route path="/dashboard" component={Dashboard} />
+            <Route path="/register" component={Register} />
+            <Route path="/" component={Home} />
+          </Switch>
+          <Footer />
+        </div>
+      </BrowserRouter>
     );
   }
 }
 
-export default App;
+export default CssModules(App, CssRoot);

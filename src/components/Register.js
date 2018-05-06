@@ -4,9 +4,11 @@ import CssModules from 'react-css-modules'
 
 class Register extends React.Component {
     render() {
-        <div>
-            Domek
-        </div>
+        return (
+            <div>
+                Register
+            </div>
+        )
     }
 }
 

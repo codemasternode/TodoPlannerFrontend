@@ -4,9 +4,11 @@ import CssModules from 'react-css-modules'
 
 class Nav extends React.Component {
     render() {
-        <div>
-            Nav
-        </div>
+        return (
+            <div>
+                Nav
+            </div>
+        )
     }
 }
 

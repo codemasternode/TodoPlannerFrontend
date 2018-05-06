@@ -12,20 +12,14 @@ $border-nav: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .box {
-    margin: 0.75em;
+    margin: $vertical-padding;
     div {
         margin-left: 40px;
         display: inline-flex;
-        margin: $vertical-padding $horizontal-padding;
+        margin: ($vertical-padding - 0.25em) $horizontal-padding;
     }
 }
 
-@font-face {
-    font-family: 'logo';
-    src: url('../assets/cleanvertising/Cleanvertising.ttf')
-}
-
 h2 {
-    font-family: 'logo' !important;
-    margin-left: 0.75em;
+    margin-left: $vertical-padding;
 }

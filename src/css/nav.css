@@ -12,18 +12,13 @@
   margin: 0 !important; }
 
 .box {
-  margin: 0.75em; }
+  margin: 1em; }
   .box div {
     margin-left: 40px;
     display: -webkit-inline-box;
     display: -ms-inline-flexbox;
     display: inline-flex;
-    margin: 0.5em 0.5em; }
-
-@font-face {
-  font-family: 'logo';
-  src: url("../assets/cleanvertising/Cleanvertising.ttf"); }
+    margin: 0.75em 0.5em; }
 
 h2 {
-  font-family: 'logo' !important;
-  margin-left: 0.75em; }
+  margin-left: 1em; }

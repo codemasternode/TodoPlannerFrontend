@@ -8,7 +8,9 @@ class Nav extends React.Component {
         return (
             <div className="nav primary">
                 <div>
-                    <h2>TodoPlanner</h2>
+                    <h2>
+                        <Link to="/">TodoPlanner</Link>
+                    </h2>
                 </div>
                 <div className="box">
                     <div>

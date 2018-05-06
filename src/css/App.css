@@ -42,6 +42,10 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
+a {
+  text-decoration: none;
+  color: black; }
+
 /* THE END OF RESET */
 @font-face {
   font-family: 'defaultPageFont';
@@ -72,3 +76,9 @@ h5 {
 h6 {
   font-size: .75em;
   margin: 1.67em 0; }
+
+.primary {
+  background: rgba(43, 94, 175, 0.75); }
+
+a:hover {
+  cursor: pointer; }

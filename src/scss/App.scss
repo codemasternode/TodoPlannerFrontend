@@ -1,4 +1,6 @@
 
+@import "variables";
+
 /* Reset default css styles in browsers */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -43,6 +45,10 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+a {
+    text-decoration: none;
+    color: black;
+}
 
 /* THE END OF RESET */
 
@@ -62,4 +68,14 @@ h3              { font-size: 1.17em; margin: .83em 0 }
 h4              { margin: 1.12em 0 }
 h5              { font-size: .83em; margin: 1.5em 0 }
 h6              { font-size: .75em; margin: 1.67em 0 }
+
+.primary {
+    background: $primary-color;
+}
+
+
+a:hover {
+    cursor: pointer;
+}
+
 

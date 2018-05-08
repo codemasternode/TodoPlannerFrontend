@@ -84,7 +84,7 @@ h6 {
 p {
   text-align: justify;
   line-height: 1.1;
-  font-size: 1.5em; }
+  font-size: 1.4em; }
 
 html {
   background: #f7f7f7 !important; }
@@ -132,7 +132,7 @@ body {
   background: url("../assets/static images/Planowanie-projektu-IT.png") no-repeat center;
   background-size: 100%;
   -webkit-filter: brightness(0.8);
-  filter: brightness(0.6);
+  filter: brightness(0.8);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -152,4 +152,6 @@ button {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   height: 70px;
-  font-size: 22px; }
+  font-size: 22px;
+  -webkit-filter: brightness(1);
+  filter: brightness(1); }

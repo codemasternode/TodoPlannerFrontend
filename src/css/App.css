@@ -82,28 +82,36 @@ h6 {
   margin: 1.67em 0; }
 
 html {
-  background: rgba(167, 163, 163, 0.103) !important; }
+  background: rgba(179, 179, 179, 0.103) !important; }
 
 .primary {
   background: rgba(57, 126, 236, 0.75); }
 
 .container {
-  margin-left: 3em 3em;
-  margin-right: 3em 3em;
+  max-width: 1400px;
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1400px; }
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-top: 1em; }
 
 a:hover {
   cursor: pointer; }
 
 .col {
   padding: 2em 1em;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap; }
+  max-width: 400px; }
 
 * {
   line-height: 22px; }
+
+body {
+  min-height: 100%;
+  position: relative; }

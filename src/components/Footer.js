@@ -8,10 +8,11 @@ class Footer extends React.Component {
             <div className="footer primary">
                 <div className="container">
                     <div className="col">
-                        marcinwarzybok@outlook.com <br />
-                        Made by Marcin Warzybok<br />
-                        20 listopada 2000<br />
-                        tel.673 334 353<br />
+                        <p>marcinwarzybok@outlook.com <br />
+                            Made by Marcin Warzybok<br />
+                            20 listopada 2000<br />
+                            tel.673 334 353<br />
+                        </p>
                     </div>
                     <div className="col">
 

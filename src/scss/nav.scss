@@ -12,7 +12,7 @@
 }
 
 .box {
-    margin: $vertical-padding;
+    margin: $vertical-padding * 2;
     div {
         margin-left: 40px;
         display: inline-flex;

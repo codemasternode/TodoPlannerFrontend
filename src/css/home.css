@@ -1,3 +1,23 @@
 .image-wrapper img {
   width: 100%;
-  height: auto; }
+  height: auto;
+  -webkit-filter: saturate(150%);
+  -moz-filter: saturate(150%);
+  -o-filter: saturate(150%);
+  -ms-filter: saturate(150%);
+  filter: saturate(150%);
+  border: 1px solid rgba(0, 0, 0, 0.2); }
+
+.col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .col h2 {
+    margin-top: 0;
+    margin-left: 0; }

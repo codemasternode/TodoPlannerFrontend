@@ -1,6 +1,23 @@
+@import "variables";
+
 .image-wrapper {
     img {
         width: 100%;
         height: auto;
+        -webkit-filter: saturate(150%);
+        -moz-filter: saturate(150%);
+        -o-filter: saturate(150%);
+        -ms-filter: saturate(150%);
+        filter: saturate(150%);
+        border: $border-nav;
+    }
+}
+.col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h2 {
+        margin-top: 0 ;
+        margin-left: 0;
     }
 }

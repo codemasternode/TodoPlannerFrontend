@@ -75,6 +75,11 @@ h4              { margin: 1.12em 0 }
 h5              { font-size: .83em; margin: 1.5em 0 }
 h6              { font-size: .75em; margin: 1.67em 0 }
 
+p {
+	text-align: justify;
+	line-height: 1.1;
+}
+
 html {
     background: $secondary-color !important;
 }
@@ -92,7 +97,7 @@ html {
 	display: flex;
     justify-content: space-around;
 	flex-wrap: wrap;
-	margin-top: $vertical-padding;
+	margin-top: $vertical-padding * 6;
 }
 
 a:hover {
@@ -102,6 +107,7 @@ a:hover {
 .col {
 	padding: $col-margin-vertical $col-margin-horizontal;
 	max-width: 400px;
+	height: auto;
 	//width:300px;
 }
 

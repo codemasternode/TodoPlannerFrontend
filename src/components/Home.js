@@ -1,13 +1,15 @@
 import React from 'react'
 import homeStyles from '../css/home.css'
 import CssModules from 'react-css-modules'
+import { Link } from 'react-router-dom'
 
 class Home extends React.Component {
     render() {
         return (
             <div>
                 <div className="hero-image">
-                    
+                    <img src={require('../assets/static images/logo.png')} />
+                    <button><Link to="/register">Dołącz do nas</Link></button>
                 </div>
                 <div className="container">
                     <div className="image-wrapper">
@@ -33,7 +35,7 @@ class Home extends React.Component {
                     </div>
                 </div>
                 <div className="container">
-                    <h2 style={{ width: 100 + '%', textAlign: 'center',marginBottom: 0,marginTop: 50 + 'px' }}>Dlaczego warto wybrać nasz produkt?</h2>
+                    <h2 style={{ width: 100 + '%', textAlign: 'center', marginBottom: 0, marginTop: 50 + 'px' }}>Dlaczego warto wybrać nasz produkt?</h2>
                     <div className="col">
                         <img className="brand" src={require('../assets/static images/bbff1f8c-efa5-4de6-9cdd-5a7f374f34a3.png')} />
                     </div>

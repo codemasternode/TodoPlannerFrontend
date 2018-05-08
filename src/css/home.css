@@ -21,3 +21,12 @@
   .col h2 {
     margin-top: 0;
     margin-left: 0; }
+
+.hero-image img {
+  width: 40%;
+  height: auto; }
+
+.hero-image button {
+  background: #699cef; }
+  .hero-image button a {
+    color: white; }

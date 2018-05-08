@@ -21,3 +21,16 @@
         margin-left: 0;
     }
 }
+
+.hero-image {
+    img {
+        width: 40%;
+        height: auto;
+    }
+    button {
+        background: $primary-color;
+        a {
+            color: white;
+        }
+    }
+}

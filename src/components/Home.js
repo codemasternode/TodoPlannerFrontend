@@ -6,6 +6,9 @@ class Home extends React.Component {
     render() {
         return (
             <div>
+                <div className="hero-image">
+                    
+                </div>
                 <div className="container">
                     <div className="image-wrapper">
                         <img src={require('../assets/static images/planowanie-spadku-05.jpg')} />
@@ -18,7 +21,7 @@ class Home extends React.Component {
                     </div>
                 </div>
                 <div className="container">
-                    
+
                     <div className="col">
                         <div>
                             <h2>Świadomość</h2>
@@ -29,7 +32,19 @@ class Home extends React.Component {
                         <img src={require('../assets/static images/nCTBIGahPNQeU3H.jpeg')} />
                     </div>
                 </div>
-            </div>
+                <div className="container">
+                    <h2 style={{ width: 100 + '%', textAlign: 'center',marginBottom: 0,marginTop: 50 + 'px' }}>Dlaczego warto wybrać nasz produkt?</h2>
+                    <div className="col">
+                        <img className="brand" src={require('../assets/static images/bbff1f8c-efa5-4de6-9cdd-5a7f374f34a3.png')} />
+                    </div>
+                    <div className="col">
+                        <img className="brand" src={require('../assets/static images/bc61ffb8-9991-49db-9ece-819e685d340f.png')} />
+                    </div>
+                    <div className="col">
+                        <img className="brand" src={require('../assets/static images/bebfc3e4-98f9-4205-8fdd-a5ee2625bdc0.png')} />
+                    </div>
+                </div>
+            </div >
         )
     }
 }

@@ -154,7 +154,15 @@ button {
   height: 70px;
   font-size: 22px;
   -webkit-filter: brightness(1);
-  filter: brightness(1); }
+  filter: brightness(1);
+  -webkit-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms; }
+
+button:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1); }
 
 @media screen and (max-width: 468px) {
   .col {

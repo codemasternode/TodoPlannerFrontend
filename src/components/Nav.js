@@ -2,6 +2,8 @@ import React from 'react'
 import navStyles from '../css/nav.css'
 import CssModules from 'react-css-modules'
 import { Link } from 'react-router-dom'
+import LoginForm from './LoginForm';
+
 
 class Nav extends React.Component {
     render() {
@@ -15,6 +17,9 @@ class Nav extends React.Component {
                 <div className="box">
                     <div>
                         Logowanie
+                    </div>
+                    <div className="login-form">
+                        <LoginForm />
                     </div>
                     <div>
                         <Link to="/register">

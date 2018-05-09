@@ -143,6 +143,10 @@ button {
 	height: 70px;
 	font-size: 22px;
 	filter: brightness(1);
+	transition-duration: 200ms;
+}
+button:hover {
+	transform: scale(1.1);
 }
 
 @media screen and (max-width: 468px){

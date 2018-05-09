@@ -9,7 +9,9 @@
   box-sizing: border-box;
   width: 100%;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  margin: 0 !important; }
+  margin: 0 !important;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
 
 .box {
   margin: 2em; }
@@ -22,3 +24,14 @@
 
 h2 {
   margin-left: 1em; }
+
+@media screen and (max-width: 468px) {
+  .logo {
+    width: 100%;
+    text-align: center; }
+  .box {
+    width: 100%;
+    text-align: center; }
+  h2 {
+    margin: 0;
+    margin-top: 1em; } }

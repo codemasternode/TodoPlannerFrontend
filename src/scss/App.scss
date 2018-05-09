@@ -78,7 +78,7 @@ h6              { font-size: .75em; margin: 1.67em 0 }
 p {
 	text-align: justify;
 	line-height: 1.1;
-	font-size: $paragraph-size;
+	font-size: $font-size-large;
 }
 
 html {
@@ -138,11 +138,24 @@ body {
 }
 
 button {
-	padding: 1em 2em;
+	padding: $button-padding;
 	box-sizing: border-box;
 	height: 70px;
 	font-size: 22px;
 	filter: brightness(1);
+}
+
+@media screen and (max-width: 468px){
+   .col {
+	   padding: $col-margin-vertical $col-margin-horizontal; 
+   }
+   p {
+	   font-size: $font-size-small;
+   }
+   h1{ font-size: $font-size-small * 2; margin: .67em 0 }
+   h2{ font-size: $font-size-small * 1.7; margin: $vertical-padding 0 !important }
+   button {padding: $button-padding-small}
+   a {font-size: $font-size-small}
 }
 
 

@@ -7,7 +7,7 @@ class Nav extends React.Component {
     render() {
         return (
             <div className="nav primary">
-                <div>
+                <div className="logo">
                     <h2>
                         <Link to="/">TodoPlanner</Link>
                     </h2>

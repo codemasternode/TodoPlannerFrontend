@@ -155,3 +155,19 @@ button {
   font-size: 22px;
   -webkit-filter: brightness(1);
   filter: brightness(1); }
+
+@media screen and (max-width: 468px) {
+  .col {
+    padding: 2em 1em; }
+  p {
+    font-size: 0.9em; }
+  h1 {
+    font-size: 1.8em;
+    margin: .67em 0; }
+  h2 {
+    font-size: 1.53em;
+    margin: 1em 0 !important; }
+  button {
+    padding: 15px 10px; }
+  a {
+    font-size: 0.9em; } }

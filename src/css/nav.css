@@ -59,7 +59,8 @@ h2 {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
   .login-form form {
-    width: 100%; }
+    width: 100%;
+    background: #c2c8dd; }
   .login-form button {
     display: -webkit-box;
     display: -ms-flexbox;

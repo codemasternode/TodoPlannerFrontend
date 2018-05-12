@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import LoginForm from './LoginForm';
 import $ from 'jquery'
 import reactDom from 'react-dom'
+import { withRouter } from 'react-router-dom'
 
 
 class Nav extends React.Component {
@@ -30,6 +31,11 @@ class Nav extends React.Component {
         //         $(loginForm).removeClass('visibility-logining')
         //     }
         // })
+        this.props.history.listen((location, action) => {
+            if ($(loginForm).hasClass('visibility-logining')) {
+                $(loginForm).removeClass('visibility-logining')
+            }
+        })
     }
 
 
@@ -60,4 +66,4 @@ class Nav extends React.Component {
     }
 }
 
-export default CssModules(Nav, navStyles)
+export default withRouter(CssModules(Nav, navStyles))

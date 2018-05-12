@@ -2,10 +2,12 @@ import React from 'react'
 import { reduxForm, Field } from 'redux-form'
 import { connect } from 'react-redux'
 import loginUser from '../actions/login'
-
+import $ from 'jquery'
+import { withRouter } from 'react-router-dom'
 
 
 class LoginForm extends React.Component {
+
 
     renderField(field) {
         const { meta: { touched, error } } = field
@@ -36,7 +38,7 @@ class LoginForm extends React.Component {
         return (
             <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 <Field type="text" label="Email" name="email" component={this.renderField} />
-                <Field type="password" label="password" name="password" component={this.renderField} />
+                <Field type="password" label="Hasło" name="password" component={this.renderField} />
                 <button type="submit">Zaloguj</button>
             </form>
         )
@@ -58,4 +60,4 @@ function mapStateToProps(state) {
 export default reduxForm({
     validate: validate,
     form: 'Login'
-})(connect(mapStateToProps, { loginUser })(LoginForm))
+})(withRouter(connect(mapStateToProps, { loginUser })(LoginForm)))

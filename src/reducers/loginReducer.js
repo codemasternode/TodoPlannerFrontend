@@ -1,15 +1,15 @@
 import { success, failed } from '../actions/login'
 
-export default function (state, action) {
+const defaultState = {
+    authenticated: false
+}
+
+export default function (state = defaultState, action) {
     switch (action.type) {
         case success:
-            console.log(action.payload)
-            newState = action.response
-            state = newState
-            return state
+            return { ...state, authenticated: true }
         case failed:
-            console.log(action.payload)
-            return action.response
+            return { ...state, error: action.payload.data.message }
         default:
             return state
     }

@@ -4,14 +4,13 @@ import reduxThunk from 'redux-thunk'
 export const success = 'login_success'
 export const failed = 'login_failed'
 
-export function loginSuccess(payload) {
+function loginSuccess(payload) {
     return {
         type: success,
         payload
     }
 }
-
-export function loginFailed(payload) {
+function loginFailed(payload) {
     return {
         type: failed,
         payload
@@ -19,7 +18,6 @@ export function loginFailed(payload) {
 }
 
 export default function loginUser(values, callback) {
-    console.log('Wywoałeni')
     const options = {
         method: 'POST',
         headers: {
@@ -43,11 +41,11 @@ export default function loginUser(values, callback) {
         // })
         axios.post('http://localhost:8080/auth', values)
             .then((res) => {
-                console.log(res)
-                console.log('po zapytaniu')
+                
                 if (res.data.success == true) {
-                    callback()
+                    localStorage.setItem('tokenAuth', res.data.token)
                     dispatch(loginSuccess(res))
+                    callback()
                 }
                 else {
                     dispatch(loginFailed(res))

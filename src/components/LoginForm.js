@@ -25,7 +25,6 @@ class LoginForm extends React.Component {
     }
 
     onSubmit(e) {
-        console.log(this.props)
         this.props.loginUser(e, () => {
             this.props.history.push('/dashboard')
         })

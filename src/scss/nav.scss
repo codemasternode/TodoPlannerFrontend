@@ -52,7 +52,8 @@ h2 {
     top: 50px;
     width: 80%;
     min-width: 400px;
-    padding: 1em 2em;
+    background: rgb(194, 200, 221);
+    margin: 0 !important;
     div {
         display: flex;
         align-items: center;
@@ -61,7 +62,7 @@ h2 {
     }
     form {
         width: 100%;
-        background: rgb(194, 200, 221)
+        
     }
     button {
         display: flex;

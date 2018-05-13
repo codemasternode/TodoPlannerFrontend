@@ -46,7 +46,8 @@ h2 {
   top: 50px;
   width: 80%;
   min-width: 400px;
-  padding: 1em 2em; }
+  background: #c2c8dd;
+  margin: 0 !important; }
   .login-form div {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -59,8 +60,7 @@ h2 {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap; }
   .login-form form {
-    width: 100%;
-    background: #c2c8dd; }
+    width: 100%; }
   .login-form button {
     display: -webkit-box;
     display: -ms-flexbox;

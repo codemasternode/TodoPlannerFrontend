@@ -39,7 +39,9 @@ class LoginForm extends React.Component {
             <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 <Field type="text" label="Email" name="email" component={this.renderField} />
                 <Field type="password" label="Hasło" name="password" component={this.renderField} />
-                <button type="submit">Zaloguj</button>
+                <div>
+                    <button type="submit">Zaloguj</button>
+                </div>
             </form>
         )
     }

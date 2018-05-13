@@ -144,6 +144,7 @@ button {
 	font-size: 22px;
 	filter: brightness(1);
 	transition-duration: 200ms;
+	cursor: pointer;
 }
 button:hover {
 	transform: scale(1.1);

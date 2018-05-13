@@ -15,6 +15,8 @@ class Nav extends React.Component {
         const loginForm = reactDom.findDOMNode(this.refs.loginForm)
         if ($(window).width() > 600) {
             $(loginForm).toggleClass('visibility-logining')
+        } else {
+            this.props.history.push('/login')
         }
 
     }

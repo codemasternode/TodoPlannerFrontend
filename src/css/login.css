@@ -12,10 +12,8 @@ form {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  border: 1px solid rgba(0, 0, 0, 0.2);
   padding: 9em 2em;
-  margin-right: -10px !important;
-  border-radius: 5px; }
+  margin-right: -10px !important; }
   form button {
     margin: 0 auto !important;
     width: 40%;
@@ -27,6 +25,6 @@ form {
   form label {
     margin-right: 0.5em; }
   form input {
-    width: 80%;
+    width: 100%;
     border-radius: 5px;
     border: 1px solid rgba(0, 0, 0, 0.2); }

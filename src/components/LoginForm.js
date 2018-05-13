@@ -36,7 +36,7 @@ class LoginForm extends React.Component {
         const { handleSubmit } = this.props;
 
         return (
-            <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
+            <form onSubmit={handleSubmit(this.onSubmit.bind(this))} id="k">
                 <Field type="text" label="Email" name="email" component={this.renderField} />
                 <Field type="password" label="Hasło" name="password" component={this.renderField} />
                 <div>
@@ -48,7 +48,27 @@ class LoginForm extends React.Component {
 }
 
 function validate(values) {
+    const errors = {}
 
+
+    if (!values.email) {
+        errors.email = "Pole jest wymagane!!!";
+
+    } else {
+        var monkey = "@";
+        if (!values.email.includes(monkey)) {
+            errors.email = "Proszę wprowadzić prawidłowy email"
+        } else {
+            const monkeyPos = values.email.indexOf(monkey);
+            if (values.email.split(monkey)[0].length == 0 || values.email.slice(monkeyPos + 1).length == 0) {
+                errors.email = "Proszę wprowadzić prawidłowy email"
+            }
+        }
+    }
+    if (!values.password) {
+        errors.password = "Pole jest wymagane!!!";
+    } 
+    return errors;
 }
 
 function mapStateToProps(state) {

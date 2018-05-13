@@ -180,3 +180,8 @@ button:hover {
     padding: 15px 10px; }
   a {
     font-size: 0.9em; } }
+
+.text-help {
+  color: red;
+  font-size: 16px;
+  margin-top: 4px !important; }

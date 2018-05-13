@@ -12,6 +12,14 @@
   margin: 0 !important;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
+  .nav label {
+    text-align: center; }
+  .nav button {
+    text-align: center !important;
+    min-width: 110px; }
+
+input {
+  border: 1px solid rgba(78, 78, 78, 0.5) !important; }
 
 .box {
   margin: 2em;

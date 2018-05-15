@@ -1,18 +1,18 @@
 import axios from 'axios'
 import reduxThunk from 'redux-thunk'
 
-export const success = 'login_success'
-export const failed = 'login_failed'
+export const loginSuccess = 'login_success'
+export const loginFailed = 'login_failed'
 
-function loginSuccess(payload) {
+export function loginOnSuccess(payload) {
     return {
-        type: success,
+        type: loginSuccess,
         payload
     }
 }
-function loginFailed(payload) {
+export function loginOnFailed(payload) {
     return {
-        type: failed,
+        type: loginFailed,
         payload
     }
 }
@@ -41,17 +41,17 @@ export default function loginUser(values, callback) {
         // })
         axios.post('http://localhost:8080/auth', values)
             .then((res) => {
-                
-                if (res.data.success == true) {
+                if (res.data.success) {
                     localStorage.setItem('tokenAuth', res.data.token)
-                    dispatch(loginSuccess(res))
+                    dispatch(loginOnSuccess(res))
+                    
                     callback()
                 }
                 else {
-                    dispatch(loginFailed(res))
+                    dispatch(loginOnFailed(res))
                 }
             }).catch((e) => {
-                console.log(e)
+                dispatch(loginOnFailed(e))
             })
     }
 }

@@ -1,16 +1,16 @@
-export const logout_success = 'logout_success'
-export const logout_failed = 'logout_failed'
+export const logoutSuccess = 'logout_success'
+export const logoutFailed = 'logout_failed'
 
 
 export function logoutOnSuccess() {
     return {
-        type: logout_success
+        type:  logoutSuccess
     }
 }
 
 export function logoutOnFailed() {
     return {
-        type: logout_failed
+        type: logoutFailed
     }
 }
 

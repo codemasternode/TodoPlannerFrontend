@@ -8,6 +8,13 @@ import { withRouter } from 'react-router-dom'
 
 class LoginForm extends React.Component {
 
+    constructor(props) {
+        super(props);
+        this.renderErrors = this.renderErrors.bind(this)
+        this.state = {
+            error: props.loginResult.error
+        }
+    }
 
     renderField(field) {
         const { meta: { touched, error } } = field
@@ -22,6 +29,19 @@ class LoginForm extends React.Component {
                 </div>
             </div>
         )
+    }
+
+    componentWillReceiveProps() {
+        console.log(this.props.loginResult.error)
+        this.setState = {
+            error: this.props.loginResult.error
+        }
+    }
+    
+
+    renderErrors() {
+        if(this.state.error == 'Niema takie')
+        return <div>{this.state.error}</div>
     }
 
     onSubmit(e) {
@@ -41,6 +61,9 @@ class LoginForm extends React.Component {
                 <div>
                     <button type="submit">Zaloguj</button>
                 </div>
+
+                {this.renderErrors()}
+
             </form>
         )
     }
@@ -66,7 +89,7 @@ function validate(values) {
     }
     if (!values.password) {
         errors.password = "Pole jest wymagane!!!";
-    } 
+    }
     return errors;
 }
 

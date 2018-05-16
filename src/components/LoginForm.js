@@ -8,12 +8,14 @@ import { withRouter } from 'react-router-dom'
 
 class LoginForm extends React.Component {
 
-    constructor(props) {
-        super(props);
-        this.renderErrors = this.renderErrors.bind(this)
-        this.state = {
-            error: props.loginResult.error
-        }
+    constructor() {
+        super();
+        this.renderErrors = this.renderErrors.bind(this);
+    }
+
+    renderErrors() {
+        console.log(this.props.loginResult.error)
+        return <div>{this.props.loginResult.error}</div>
     }
 
     renderField(field) {
@@ -31,23 +33,11 @@ class LoginForm extends React.Component {
         )
     }
 
-    componentWillReceiveProps() {
-        console.log(this.props.loginResult.error)
-        this.setState = {
-            error: this.props.loginResult.error
-        }
-    }
-    
-
-    renderErrors() {
-        if(this.state.error == 'Niema takie')
-        return <div>{this.state.error}</div>
-    }
-
     onSubmit(e) {
         this.props.loginUser(e, () => {
             this.props.history.push('/dashboard')
         })
+        
     }
 
     render() {
@@ -58,11 +48,10 @@ class LoginForm extends React.Component {
             <form onSubmit={handleSubmit(this.onSubmit.bind(this))} id="k">
                 <Field type="text" label="Email" name="email" component={this.renderField} />
                 <Field type="password" label="Hasło" name="password" component={this.renderField} />
+                {this.renderErrors()}
                 <div>
                     <button type="submit">Zaloguj</button>
                 </div>
-
-                {this.renderErrors()}
 
             </form>
         )
@@ -103,5 +92,5 @@ function mapStateToProps(state) {
 
 export default reduxForm({
     validate: validate,
-    form: 'Login'
+    form: 'loginForm'
 })(withRouter(connect(mapStateToProps, { loginUser })(LoginForm)))

@@ -1,5 +1,5 @@
 import axios from 'axios'
-import reduxThunk from 'redux-thunk'
+import { reset } from 'redux-form'
 
 export const loginSuccess = 'login_success'
 export const loginFailed = 'login_failed'
@@ -44,7 +44,7 @@ export default function loginUser(values, callback) {
                 if (res.data.success) {
                     localStorage.setItem('tokenAuth', res.data.token)
                     dispatch(loginOnSuccess(res))
-                    
+                    dispatch(reset('loginForm'))
                     callback()
                 }
                 else {

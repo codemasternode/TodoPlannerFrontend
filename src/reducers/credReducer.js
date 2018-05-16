@@ -1,5 +1,6 @@
 import { loginSuccess, loginFailed } from '../actions/login'
 
+
 const defaultState = {
     authenticated: false
 }
@@ -7,7 +8,7 @@ const defaultState = {
 export default function (state = defaultState, action) {
     switch (action.type) {
         case loginSuccess:
-            return { ...state, authenticated: true }
+            return { ...state, authenticated: true, error: '' }
         case loginFailed:
             return { ...state, error: action.payload.response.data.message }
         default:

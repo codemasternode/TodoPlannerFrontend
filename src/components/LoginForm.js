@@ -14,10 +14,8 @@ class LoginForm extends React.Component {
     }
 
     renderErrors() {
-        console.log(this.props.loginResult.error)
-        return <div>{this.props.loginResult.error}</div>
+        return <div className="warning">{this.props.loginResult.error}</div>
     }
-
     renderField(field) {
         const { meta: { touched, error } } = field
         const validation = `control ${touched && error ? 'danger' : ''}`
@@ -37,13 +35,13 @@ class LoginForm extends React.Component {
         this.props.loginUser(e, () => {
             this.props.history.push('/dashboard')
         })
-        
+
     }
 
     render() {
 
         const { handleSubmit } = this.props;
-
+        console.log(this.props.loginResult)
         return (
             <form onSubmit={handleSubmit(this.onSubmit.bind(this))} id="k">
                 <Field type="text" label="Email" name="email" component={this.renderField} />
@@ -82,9 +80,9 @@ function validate(values) {
     return errors;
 }
 
-function mapStateToProps(state) {
+function mapStateToProps({ loginResult }) {
     return {
-        loginResult: state.loginResult
+        loginResult
     }
 }
 

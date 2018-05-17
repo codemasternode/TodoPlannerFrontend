@@ -28,17 +28,6 @@ export default function loginUser(values, callback) {
         url: 'http://localhost:8080/auth'
     }
     return (dispatch) => {
-        // axios(options).then((response) => {
-        //     console.log(response)
-        //     if (response.success == true) {
-        //         callback()
-        //         dispatch(loginSuccess(response))
-        //     } else {
-        //         dispatch(loginFailed(response))
-        //     }
-        // }).catch((e) => {
-        //     dispatch(loginFailed(e))
-        // })
         axios.post('http://localhost:8080/auth', values)
             .then((res) => {
                 if (res.data.success) {
@@ -49,9 +38,11 @@ export default function loginUser(values, callback) {
                 }
                 else {
                     dispatch(loginOnFailed(res))
+                    dispatch(reset('loginForm'))
                 }
             }).catch((e) => {
                 dispatch(loginOnFailed(e))
+                dispatch(reset('loginForm'))
             })
     }
 }

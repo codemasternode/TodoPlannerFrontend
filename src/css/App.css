@@ -187,5 +187,4 @@ button:hover {
   margin-top: 4px !important; }
 
 .warning {
-  background: red;
-  border: 1px solid #9c0101; }
+  color: red; }

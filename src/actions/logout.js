@@ -4,7 +4,7 @@ export const logoutFailed = 'logout_failed'
 
 export function logoutOnSuccess() {
     return {
-        type:  logoutSuccess
+        type: logoutSuccess
     }
 }
 
@@ -14,9 +14,10 @@ export function logoutOnFailed() {
     }
 }
 
-export default function logoutUser() {
+export default function logoutUser(callback) {
     return (dispatch) => {
-        localStorage.removeItem('access_token')
-        dispatch(logout_success())
+        localStorage.removeItem('tokenAuth')
+        dispatch(logoutOnSuccess())
+        callback()
     }
 }

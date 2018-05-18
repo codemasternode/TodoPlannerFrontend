@@ -8,10 +8,15 @@ import reactDom from 'react-dom'
 import { withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
 import BeforeLogin from './BeforeLogin'
+import AfterLogin from './AfterLogin'
 
 
 class Nav extends React.Component {
+
+    
+
     render() {
+        console.log(localStorage.getItem('tokenAuth'))
         return (
             <div className="nav primary">
                 <div className="logo">
@@ -19,7 +24,7 @@ class Nav extends React.Component {
                         <Link to="/">TodoPlanner</Link>
                     </h2>
                 </div>
-                {this.props.loginResult.authenticated ? <div>Zalogowano</div> : <BeforeLogin />}
+                {this.props.loginResult.authenticated || localStorage.getItem('tokenAuth') != null ? <AfterLogin /> : <BeforeLogin />}
             </div>
         )
     }

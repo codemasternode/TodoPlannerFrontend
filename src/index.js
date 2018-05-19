@@ -1,7 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux'
 import App from './App';
-import registerServiceWorker from './registerServiceWorker'
+import { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import combine from './reducers/combine'
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+const createStoreWithMiddleware = applyMiddleware(thunk)(createStore)
+
+ReactDOM.render(
+    <Provider store={createStoreWithMiddleware(combine)}>
+        <App />
+    </Provider>,
+     document.getElementById('root'));
+

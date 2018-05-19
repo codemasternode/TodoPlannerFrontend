@@ -148,13 +148,22 @@ body {
   flex-direction: column; }
 
 button {
-  padding: 1em 2em;
+  padding: 0.7em 1.5em;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   height: 70px;
   font-size: 22px;
   -webkit-filter: brightness(1);
-  filter: brightness(1); }
+  filter: brightness(1);
+  -webkit-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+  cursor: pointer; }
+
+button:hover {
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1); }
 
 @media screen and (max-width: 468px) {
   .col {
@@ -170,4 +179,33 @@ button {
   button {
     padding: 15px 10px; }
   a {
-    font-size: 0.9em; } }
+    font-size: 0.9em; }
+  .after-login {
+    width: 100%;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; } }
+
+.text-help {
+  color: red;
+  font-size: 16px;
+  margin-top: 4px !important; }
+
+.warning {
+  color: red; }
+
+.after-login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .after-login div {
+    padding: 1em 2em; }
+  .after-login button {
+    padding: 0.5em 1em;
+    height: 50px;
+    min-height: 0;
+    margin-right: 10px; }

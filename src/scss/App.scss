@@ -143,6 +143,11 @@ button {
 	height: 70px;
 	font-size: 22px;
 	filter: brightness(1);
+	transition-duration: 200ms;
+	cursor: pointer;
+}
+button:hover {
+	transform: scale(1.1);
 }
 
 @media screen and (max-width: 468px){
@@ -156,7 +161,34 @@ button {
    h2{ font-size: $font-size-small * 1.7; margin: $vertical-padding 0 !important }
    button {padding: $button-padding-small}
    a {font-size: $font-size-small}
+   .after-login {
+	   width: 100%;
+	   flex-wrap: wrap;
+   }
+}
+.text-help {
+	color: red;
+	font-size: 16px;
+	margin-top: 4px !important;
 }
 
+.warning {
+	color: red;
+}
+
+.after-login {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	div {
+		padding: 1em 2em;
+	}
+	button {
+		padding: 0.5em 1em;
+		height: 50px;
+		min-height: 0;
+		margin-right: 10px;
+	}
+}
 
 

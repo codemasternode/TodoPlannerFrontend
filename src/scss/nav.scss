@@ -10,10 +10,22 @@
     border-bottom: $border-nav;
     margin: 0 !important;
     flex-wrap: wrap;
+    label {
+        text-align: center;
+    }
+    button {
+        text-align: center !important;
+        min-width: 110px;
+    }
 }
+input {
+    border: 1px solid rgba(78, 78, 78, 0.5) !important; 
+}
+
 
 .box {
     margin: $vertical-padding * 2;
+    position: relative;
     div {
         margin-left: 40px;
         display: inline-flex;
@@ -40,4 +52,47 @@ h2 {
         margin-top: $vertical-padding;
     }
    
+}
+
+.login-form {
+    display: none !important;
+    position: absolute;
+    left: -300px;
+    z-index: 2;
+    background: white;
+    top: 50px;
+    width: 80%;
+    min-width: 400px;
+    background: rgb(194, 200, 221);
+    margin: 0 !important;
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    form {
+        width: 100%;
+        
+    }
+    button {
+        display: flex;
+        align-self: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: $vertical-padding;
+    }
+}
+
+.visibility-logining {
+    display: block !important;
+}
+
+label {
+    width: 150px;
+    height: 20px;
+}
+
+#g:hover{
+    cursor: pointer;
 }

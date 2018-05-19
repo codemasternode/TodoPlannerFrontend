@@ -9,6 +9,7 @@ import Nav from './components/Nav'
 import Register from './components/Register'
 import Footer from './components/Footer'
 
+
 class App extends Component {
   render() {
     return (
@@ -18,6 +19,7 @@ class App extends Component {
           <Switch>
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/register" component={Register} />
+            <Route path="/login" component={Login} />
             <Route path="/" component={Home} />
           </Switch>
           <Footer />

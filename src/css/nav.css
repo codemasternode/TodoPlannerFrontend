@@ -12,9 +12,18 @@
   margin: 0 !important;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
+  .nav label {
+    text-align: center; }
+  .nav button {
+    text-align: center !important;
+    min-width: 110px; }
+
+input {
+  border: 1px solid rgba(78, 78, 78, 0.5) !important; }
 
 .box {
-  margin: 2em; }
+  margin: 2em;
+  position: relative; }
   .box div {
     margin-left: 40px;
     display: -webkit-inline-box;
@@ -35,3 +44,47 @@ h2 {
   h2 {
     margin: 0;
     margin-top: 1em; } }
+
+.login-form {
+  display: none !important;
+  position: absolute;
+  left: -300px;
+  z-index: 2;
+  background: white;
+  top: 50px;
+  width: 80%;
+  min-width: 400px;
+  background: #c2c8dd;
+  margin: 0 !important; }
+  .login-form div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; }
+  .login-form form {
+    width: 100%; }
+  .login-form button {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-item-align: center;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1em; }
+
+.visibility-logining {
+  display: block !important; }
+
+label {
+  width: 150px;
+  height: 20px; }
+
+#g:hover {
+  cursor: pointer; }

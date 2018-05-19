@@ -3,7 +3,18 @@ import navStyles from '../css/nav.css'
 import CssModules from 'react-css-modules'
 import { Link } from 'react-router-dom'
 
+import $ from 'jquery'
+import reactDom from 'react-dom'
+import { withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
+import BeforeLogin from './BeforeLogin'
+import AfterLogin from './AfterLogin'
+
+
 class Nav extends React.Component {
+
+    
+
     render() {
         return (
             <div className="nav primary">
@@ -12,19 +23,17 @@ class Nav extends React.Component {
                         <Link to="/">TodoPlanner</Link>
                     </h2>
                 </div>
-                <div className="box">
-                    <div>
-                        Logowanie
-                    </div>
-                    <div>
-                        <Link to="/register">
-                            Rejestracja
-                        </Link>
-                    </div>
-                </div>
+                {localStorage.getItem('tokenAuth') != null ? <AfterLogin /> : <BeforeLogin />}
             </div>
         )
     }
 }
 
-export default CssModules(Nav, navStyles)
+
+function mapStateToProps({ loginResult }) {
+    return {
+        loginResult
+    }
+}
+
+export default withRouter(connect(mapStateToProps, null)(CssModules(Nav, navStyles)))

@@ -18,24 +18,27 @@ export function failedFetchCred() {
 }
 
 export default function fetchCredentials() {
-    const options = {
-        method: 'GET',
-        url: 'http://localhost:8080/verify/me',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'x-auth': localStorage.getItem('tokenAuth')
-        },
-        json: true
-    }
     return (dispatch) => {
-        try {
-            axios.get(options).then((res) => {
-                dispatch(successFetchCred(res))
-            }).catch((e) => {
+        if (localStorage.getItem('user_email') == undefined) {
+            console.log('Wyk')
+            axios.get('http://localhost:8080/verify/me', {
+                headers: {
+                    'x-auth': localStorage.getItem('tokenAuth')
+                }
+            }).then((response) => {
+                dispatch(successFetchCred(response.data))
+                localStorage.setItem('user_email', response.data.email)
+                localStorage.setItem('user_name', response.data.name)
+                localStorage.setItem('user_lastname', response.data.lastname)
+            }).catch((error) => {
                 dispatch(failedFetchCred())
-            })
-        } catch (e) {
-            dispatch(failedFetchCred())
+            });
+        } else {
+            dispatch(successFetchCred({
+                email: localStorage.getItem('user_email'),
+                name: localStorage.getItem('user_name'),
+                lastname: localStorage.getItem('user_lastname')
+            }))
         }
 
     }

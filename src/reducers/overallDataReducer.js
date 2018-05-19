@@ -1,15 +1,15 @@
-import { failedFetchCredentials, successFetchCredentials, successFetchCred } from '../actions/credentials'
+import { successFetchCredentials, failedFetchCredentials } from '../actions/credentials'
 
-export default function (state=null, action) {
+export default function (state = {}, action) {
     switch (action.type) {
         case successFetchCredentials:
-            const { data } = action.payload
+            var { email, name, lastname } = action.payload
             var newState = {
-                user_email: data.email,
-                user_name: data.name,
-                user_lastname: data.lastname
+                email,
+                name,
+                lastname
             }
-            return newState
+            return newState;
         case failedFetchCredentials:
             var newState = {
                 error: 'Twoja sesja wygasła'

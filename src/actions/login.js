@@ -18,15 +18,6 @@ export function loginOnFailed(payload) {
 }
 
 export default function loginUser(values, callback) {
-    const options = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-            'Accept': 'application/json'
-        },
-        data: values,
-        url: 'http://localhost:8080/auth'
-    }
     return (dispatch) => {
         axios.post('http://localhost:8080/auth', values)
             .then((res) => {

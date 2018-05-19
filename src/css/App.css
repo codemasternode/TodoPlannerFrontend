@@ -179,7 +179,11 @@ button:hover {
   button {
     padding: 15px 10px; }
   a {
-    font-size: 0.9em; } }
+    font-size: 0.9em; }
+  .after-login {
+    width: 100%;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap; } }
 
 .text-help {
   color: red;
@@ -188,3 +192,20 @@ button:hover {
 
 .warning {
   color: red; }
+
+.after-login {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .after-login div {
+    padding: 1em 2em; }
+  .after-login button {
+    padding: 0.5em 1em;
+    height: 50px;
+    min-height: 0;
+    margin-right: 10px; }

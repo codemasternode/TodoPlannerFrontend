@@ -16,7 +16,6 @@ class Nav extends React.Component {
     
 
     render() {
-        console.log(localStorage.getItem('tokenAuth'))
         return (
             <div className="nav primary">
                 <div className="logo">
@@ -24,7 +23,7 @@ class Nav extends React.Component {
                         <Link to="/">TodoPlanner</Link>
                     </h2>
                 </div>
-                {this.props.loginResult.authenticated || localStorage.getItem('tokenAuth') != null ? <AfterLogin /> : <BeforeLogin />}
+                {localStorage.getItem('tokenAuth') != null ? <AfterLogin /> : <BeforeLogin />}
             </div>
         )
     }

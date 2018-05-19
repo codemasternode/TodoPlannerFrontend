@@ -16,7 +16,7 @@ export function logoutOnFailed() {
 
 export default function logoutUser(callback) {
     return (dispatch) => {
-        localStorage.removeItem('tokenAuth')
+        localStorage.clear()
         dispatch(logoutOnSuccess())
         callback()
     }

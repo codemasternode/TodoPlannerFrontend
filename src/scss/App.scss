@@ -161,6 +161,10 @@ button:hover {
    h2{ font-size: $font-size-small * 1.7; margin: $vertical-padding 0 !important }
    button {padding: $button-padding-small}
    a {font-size: $font-size-small}
+   .after-login {
+	   width: 100%;
+	   flex-wrap: wrap;
+   }
 }
 .text-help {
 	color: red;
@@ -170,6 +174,21 @@ button:hover {
 
 .warning {
 	color: red;
+}
+
+.after-login {
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	div {
+		padding: 1em 2em;
+	}
+	button {
+		padding: 0.5em 1em;
+		height: 50px;
+		min-height: 0;
+		margin-right: 10px;
+	}
 }
 
 

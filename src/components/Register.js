@@ -6,7 +6,6 @@ import { connect } from 'react-redux'
 import registerUser from '../actions/register'
 
 
-
 class Register extends React.Component {
 
 
@@ -96,11 +95,13 @@ function validate(values) {
 
     } else {
         var monkey = "@";
-        if (!values.email.includes(monkey)) {
+        var point = '.'
+        if (!values.email.includes(monkey) || !values.email.includes(point)) {
             errors.email = "Proszę wprowadzić prawidłowy email"
         } else {
             const monkeyPos = values.email.indexOf(monkey);
-            if (values.email.split(monkey)[0].length == 0 || values.email.slice(monkeyPos + 1).length == 0) {
+            const pointPos = values.email.indexOf(point)
+            if (values.email.split(monkey)[0].length == 0 || values.email.slice(monkeyPos + 1).length == 0 || values.email.slice(pointPos + 1).length == 0) {
                 errors.email = "Proszę wprowadzić prawidłowy email"
             }
         }

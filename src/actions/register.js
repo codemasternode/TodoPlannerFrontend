@@ -1,4 +1,6 @@
 import axios from 'axios'
+import _ from 'lodash'
+
 
 
 export const success_register = 'success_register'
@@ -20,8 +22,9 @@ export function failedRegister(payload) {
 }
 
 export default function registerUser(data, callback) {
+    console.log(data)
     return (dispatch) => {
-        axios.post('http://localhost:8080/users')
+        axios.post('http://localhost:8080/users', _.pick(data, ['email', 'password', 'name', 'lastname']))
             .then((res) => {
                 console.log(res)
                 if (res.data.success) {

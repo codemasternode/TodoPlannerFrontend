@@ -209,3 +209,11 @@ button:hover {
     height: 50px;
     min-height: 0;
     margin-right: 10px; }
+
+.warning-text {
+  color: #7c0000;
+  background: #ff9595;
+  margin-top: 50px;
+  border: 1px solid #7c0000;
+  padding: 0.5em 1em;
+  border-radius: 7px; }

@@ -33,6 +33,10 @@ class Register extends React.Component {
         })
     }
 
+    registerResult() {
+        return <div className="warning-text"> {this.props.register.message}</div >
+    }
+
     render() {
         const { handleSubmit } = this.props
         return (
@@ -68,8 +72,10 @@ class Register extends React.Component {
                         name="confirmpassword"
                         component={this.renderInput}
                     />
+                    {this.registerResult()}
                     <button>Zarejestruj</button>
                 </form>
+
             </div>
         )
     }

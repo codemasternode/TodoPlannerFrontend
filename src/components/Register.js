@@ -13,12 +13,13 @@ class Register extends React.Component {
 
     renderInput(field) {
         const { meta: { touched, error } } = field
+
         return (
-            <div className="form-group">
+            <div>
                 <label>{field.label}</label>
                 <input
                     type={field.type}
-                    name={field.name}
+                    {...field.input}
                 />
                 <div className="text-help">
                     {touched ? error : ''}
@@ -64,9 +65,11 @@ class Register extends React.Component {
                     />
                     <Field
                         label="Powtórz hasło"
-                        type="confirmpassword"
+                        type="password"
+                        name="confirmpassword"
                         component={this.renderInput}
                     />
+                    <button>Zarejestruj</button>
                 </form>
             </div>
         )
@@ -83,12 +86,11 @@ function validate(values) {
     const errors = {}
 
     if (!values.name) {
-        errors.name = "Pole jest wymagane!!!"
+        errors.name = 'Pole jest wymagane'
     }
     if (!values.lastname) {
-        errors.username = "Pole jest wymagane!!!"
+        errors.lastname = 'Pole jest wymagane'
     }
-
     if (!values.email) {
         errors.email = "Pole jest wymagane!!!";
 
@@ -118,8 +120,9 @@ function validate(values) {
             errors.password = "Hasła różnią się od siebie"
         }
     }
-    return errors;
 
+
+    return errors
 }
 
 export default reduxForm({

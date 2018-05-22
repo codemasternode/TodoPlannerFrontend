@@ -1,8 +1,22 @@
 import React from 'react'
 import dashboardStyles from '../css/dashboard.css'
 import CssModules from 'react-css-modules'
+import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 
 class Dashboard extends React.Component {
+
+    // componentWillMount() {
+    //     if(!this.props.loginResult.authenticated){
+    //         <Redirect to="/"/>
+    //     }
+    // }
+
+    componentDidMount() {
+        console.log('TO to')
+        console.log(this.props)
+    }
+
     render() {
         return (
             <div>
@@ -12,4 +26,8 @@ class Dashboard extends React.Component {
     }
 }
 
-export default CssModules(Dashboard, dashboardStyles)
+function mapStateToProps(state) {
+    return { loginResult: state.loginResult }
+}
+
+export default connect(mapStateToProps, undefined)(CssModules(Dashboard, dashboardStyles))

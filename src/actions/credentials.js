@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { loginOnSuccess } from './login'
 
 export const successFetchCredentials = 'success_fetch_credentials'
 export const failedFetchCredentials = 'failed_fetch_credentials'
@@ -39,6 +40,7 @@ export default function fetchCredentials() {
                 name: localStorage.getItem('user_name'),
                 lastname: localStorage.getItem('user_lastname')
             }))
+            dispatch(loginOnSuccess({ hi: 'hi' }))
         }
 
     }

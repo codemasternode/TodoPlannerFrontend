@@ -48,7 +48,7 @@ class LoginForm extends React.Component {
                 <Field type="password" label="Hasło" name="password" component={this.renderField} />
                 {this.renderErrors()}
                 <div>
-                    <button type="submit">Zaloguj</button>
+                    <button type="submit" className="btn">Zaloguj</button>
                 </div>
 
             </form>

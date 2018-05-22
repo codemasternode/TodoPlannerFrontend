@@ -10,7 +10,10 @@ import Register from './components/Register'
 import Footer from './components/Footer'
 
 
+
 class App extends Component {
+  
+
   render() {
     return (
       <BrowserRouter>

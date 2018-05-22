@@ -37,16 +37,19 @@ class BeforeLogin extends React.Component {
 
     componentDidMount() {
         const loginForm = reactDom.findDOMNode(this.refs.loginForm)
+        var isInsideLoginForm
+        var isInsideLogin
+
+
         $(window).resize(() => {
             if ($(loginForm).hasClass('visibility-logining')) {
                 $(loginForm).removeClass('visibility-logining')
             }
+            
         })
 
-        
-
         // $(window).click(() => {
-        //     if ($(loginForm).hasClass('visibility-logining')) {
+        //     if ($(loginForm).hasClass('visibility-logining') && !isInsideLoginForm) {
         //         $(loginForm).removeClass('visibility-logining')
         //     }
         // })
@@ -55,6 +58,15 @@ class BeforeLogin extends React.Component {
                 $(loginForm).removeClass('visibility-logining')
             }
         })
+
+        $(loginForm).mouseover(() => {
+            isInsideLoginForm = true
+        })
+
+        $(loginForm).mouseout(() => {
+            isInsideLoginForm = false
+        })
+
     }
 }
 

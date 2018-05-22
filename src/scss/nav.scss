@@ -25,7 +25,6 @@ input {
 
 .box {
     margin: $vertical-padding * 2;
-    position: relative;
     div {
         margin-left: 40px;
         display: inline-flex;
@@ -56,13 +55,14 @@ h2 {
 
 .login-form {
     display: none !important;
-    position: absolute;
-    left: -300px;
+    position: fixed;
+    left: 40%;
     z-index: 2;
     background: white;
-    top: 50px;
+    top: 20vh;
     width: 80%;
     min-width: 400px;
+    max-width: 464px;
     background: rgb(194, 200, 221);
     margin: 0 !important;
     div {
@@ -72,8 +72,7 @@ h2 {
         flex-wrap: wrap;
     }
     form {
-        width: 100%;
-        
+        width: 85% !important;
     }
     button {
         display: flex;

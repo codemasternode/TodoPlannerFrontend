@@ -4,20 +4,16 @@ import CssModules from 'react-css-modules'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
+
 class Dashboard extends React.Component {
 
-    // componentWillMount() {
-    //     if(!this.props.loginResult.authenticated){
-    //         <Redirect to="/"/>
-    //     }
-    // }
+    
 
-    componentDidMount() {
-        console.log('TO to')
-        console.log(this.props)
-    }
 
     render() {
+        if (!this.props.loginResult.authenticated) {
+            return <Redirect to="/login" />
+        }
         return (
             <div>
                 Dashboard

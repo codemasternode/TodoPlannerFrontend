@@ -12,13 +12,13 @@ import Footer from './components/Footer'
 
 
 class App extends Component {
-  
+
 
   render() {
     return (
       <BrowserRouter>
-        <div>
-          <Nav />
+        <div ref="body">
+          <Nav body={this.refs.body} />
           <Switch>
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/register" component={Register} />

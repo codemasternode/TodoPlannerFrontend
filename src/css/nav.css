@@ -44,17 +44,23 @@ h2 {
     margin: 0;
     margin-top: 1em; } }
 
+.dark {
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+
 .login-form {
   display: none !important;
   position: fixed;
-  left: 40%;
-  z-index: 2;
+  -webkit-box-shadow: 0 0 0 1600px rgba(0, 0, 0, 0.65);
+  box-shadow: 0 0 0 1600px rgba(0, 0, 0, 0.65);
+  z-index: 3;
   background: white;
   top: 20vh;
   width: 80%;
   min-width: 400px;
   max-width: 464px;
-  background: #c2c8dd;
+  background: #f6f7f8;
   margin: 0 !important; }
   .login-form div {
     display: -webkit-box;
@@ -80,7 +86,22 @@ h2 {
     margin-top: 1em; }
 
 .visibility-logining {
-  display: block !important; }
+  display: block !important;
+  -webkit-animation: loginFormOn 200ms;
+  animation: loginFormOn 200ms;
+  border-radius: 5px; }
+
+@-webkit-keyframes loginFormOn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes loginFormOn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 
 label {
   width: 150px;

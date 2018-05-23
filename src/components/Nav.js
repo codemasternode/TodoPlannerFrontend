@@ -13,7 +13,7 @@ import AfterLogin from './AfterLogin'
 
 class Nav extends React.Component {
 
-    
+
 
     render() {
         return (
@@ -23,7 +23,7 @@ class Nav extends React.Component {
                         <Link to="/">TodoPlanner</Link>
                     </h2>
                 </div>
-                {localStorage.getItem('tokenAuth') != null ? <AfterLogin /> : <BeforeLogin />}
+                {localStorage.getItem('tokenAuth') != null ? <AfterLogin /> : <BeforeLogin body={this.props.body} />}
             </div>
         )
     }

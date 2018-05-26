@@ -64,7 +64,9 @@ class BeforeLogin extends React.Component {
         var isInsideLoginForm
         var isInsideLogin
 
-
+        function removingVisiblityClass(element) {
+            $(element).removeClass('visibility-logining')
+        }
 
         $(document).click((e) => {
             if ($(loginForm).hasClass('visibility-logining') && this.state.flag != 0) {
@@ -97,23 +99,12 @@ class BeforeLogin extends React.Component {
 
         })
 
-
-
-
-
         this.props.history.listen((location, action) => {
             if ($(loginForm).hasClass('visibility-logining')) {
                 $(loginForm).removeClass('visibility-logining')
             }
         })
 
-        $(loginForm).mouseover(() => {
-            isInsideLoginForm = true
-        })
-
-        $(loginForm).mouseout(() => {
-            isInsideLoginForm = false
-        })
 
     }
 }

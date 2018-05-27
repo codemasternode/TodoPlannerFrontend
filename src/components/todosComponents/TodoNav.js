@@ -1,29 +1,20 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-
+import NavItem from './TodoNavItem'
 
 class TodoNav extends React.Component {
     render() {
         return (
             <div className="todoNav">
-                {TodoNavItem({path: '/dayTodos',text: 'Plan dzienny'})}
-                {TodoNavItem({path: '/monthTodos',text: 'Plan misięczny'})}
-                {TodoNavItem({path: '/longTodos',text: 'Plan długoterminowy'})}
+                <NavItem text="Dzienny Planner" path="/dashboard/dayTodos"/>
+                <NavItem text="Miesięczny Planner" path="/dashboard/monthTodos"/>
+                <NavItem text="Długoterminowy Planner" path="/dashboard/longTodos"/>
             </div>
         )
     }
-    
+
 
 }
 
-const TodoNavItem = props => {
-    return
-    (<div class="todoNav-item">
-        <Link to={props.path}>
-            {props.text}
-        </Link>
-    </div>)
-}
 
 
 export default TodoNav

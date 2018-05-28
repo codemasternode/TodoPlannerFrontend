@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 const TodoNavItem = props => {
-    return (<div className="todo-nav-item">
-        <Link to={props.path}>{props.text}</Link>
-    </div>)
+    return (<li className="todo-nav-item">
+        <Link to={props.to}>{props.text}</Link>
+    </li>)
 }
 
 

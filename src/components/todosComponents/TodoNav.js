@@ -5,14 +5,14 @@ class TodoNav extends React.Component {
     render() {
         return (
             <div className="todoNav">
-                <NavItem text="Dzienny Planner" path="/dashboard/dayTodos"/>
-                <NavItem text="Miesięczny Planner" path="/dashboard/monthTodos"/>
-                <NavItem text="Długoterminowy Planner" path="/dashboard/longTodos"/>
+                <ul>
+                    <NavItem text="Dzienny Planner" to="/dashboard/dayTodo" />
+                    <NavItem text="Miesięczny Planner" to="/dashboard/monthTodo" />
+                    <NavItem text="Długoterminowy Planner" to="/dashboard/longTodo" />
+                </ul>
             </div>
         )
     }
-
-
 }
 
 

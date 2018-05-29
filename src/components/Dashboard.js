@@ -18,11 +18,12 @@ class Dashboard extends React.Component {
             return <Redirect to="/login" />
         }
         return (
-            <div>
+            <div className="container">
                 <TodoNav />
                 <Route path="/dashboard/dayTodo" component={DayTodos} />
                 <Route path="/dashboard/monthTodo" component={MonthTodos} />
                 <Route path="/dashboard/longTodo" component={LongTodos} />
+
             </div>
 
         )

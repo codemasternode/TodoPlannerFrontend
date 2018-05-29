@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import { fetchDayTodos } from '../../actions/dayTodos'
 
 class DayTodos extends React.Component {
     constructor(props) {
@@ -9,7 +10,7 @@ class DayTodos extends React.Component {
         }
     }
     componentDidMount() {
-        console.log(this.state.nowTime)
+        this.props.fetchDayTodos()
     }
     render() {
         return <div>Day Plannerasdasd</div>
@@ -20,4 +21,4 @@ function mapStateToProps({ dayTodos }) {
     return { dayTodos }
 }
 
-export default connect(mapStateToProps, {})(DayTodos)
+export default connect(mapStateToProps, { fetchDayTodos })(DayTodos)

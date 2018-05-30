@@ -1,15 +1,20 @@
 import React from 'react'
 import homeStyles from '../css/home.css'
 import CssModules from 'react-css-modules'
-import { Link } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 
 class Home extends React.Component {
+
+    sendToRegister() {
+        this.props.history.push('/register')
+    }
+
     render() {
         return (
             <div>
                 <div className="hero-image">
                     <img src={require('../assets/static images/logo.png')} />
-                    <button><Link to="/register">Dołącz do nas</Link></button>
+                    <button onClick={this.sendToRegister.bind(this)}>Dołącz do nas</button>
                 </div>
                 <div className="container">
                     <div className="image-wrapper">
@@ -51,4 +56,4 @@ class Home extends React.Component {
     }
 }
 
-export default CssModules(Home, homeStyles)
+export default withRouter(CssModules(Home, homeStyles))

@@ -26,9 +26,9 @@ export function fetchDayTodos() {
                 'x-auth': localStorage.getItem('tokenAuth')
             }
         }).then((res) => {
-            console.log(res)
+            dispatch(successFetch(res))
         }).catch((e) => {
-            console.log(e)
+            dispatch(failedFetch())
         })
     }
 }

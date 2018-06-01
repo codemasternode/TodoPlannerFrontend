@@ -26,9 +26,7 @@ class DateFormat {
     }
 }
 
-export function check(nowTime, addTime, elementToCheck) {
 
-}
 
 
 

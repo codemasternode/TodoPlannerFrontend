@@ -6,6 +6,7 @@ import DateFormat from '../helpers/DateFormat'
 import DayTodoModel from '../model/DayTodoModel'
 import _ from 'lodash'
 
+
 class DayTodos extends React.Component {
     constructor(props) {
         super(props)
@@ -30,11 +31,12 @@ class DayTodos extends React.Component {
                 arrayToFilter.splice(index, 1, dayTodoModel)
 
             });
-            // _.filter(arrayToFilter, (obj) => {
-            //     return 
-            // })
             console.log(arrayToFilter)
-            return arrayToFilter
+            const filteredArray = _.filter(arrayToFilter, ({ date: { day, month, year } }) => {
+                return day >= nowTime.day && day <= addTime.day && month >= nowTime.month && month <= addTime.month && year >= nowTime.year && year <= addTime.year
+            })
+            console.log(filteredArray)
+            return filteredArray
         })
     }
     render() {

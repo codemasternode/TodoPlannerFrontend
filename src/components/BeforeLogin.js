@@ -39,7 +39,7 @@ class BeforeLogin extends React.Component {
 
     loginClick(e) {
         const loginForm = reactDom.findDOMNode(this.refs.loginForm)
-        console.log(loginForm)
+
 
 
         if ($(window).width() > 600) {
@@ -75,7 +75,7 @@ class BeforeLogin extends React.Component {
                     height: $(loginForm).height(),
                     pos: $(loginForm).position()
                 }
-                console.log(loginFormPos.pos.left + 'to to')
+                
                 if (!((loginFormPos.pos.left < e.clientX) && (loginFormPos.pos.left + loginFormPos.width > e.clientX) && (loginFormPos.pos.top < e.clientY) && (loginFormPos.pos.top + loginFormPos.height > e.clientY))) {
                     $(loginForm).removeClass('visibility-logining')
                 }

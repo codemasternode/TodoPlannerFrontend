@@ -26,7 +26,25 @@ class DateFormat {
     }
 }
 
+export function getDays(nowTime, addTime) {
+    const days = []
+    if (addTime.day - nowTime.day < 0) {
+        const dayOfMonth = dayInMonth(nowTime.year, nowTime.month)
+        let inc = dayOfMonth - nowTime.day
+        for (let i = nowTime.day; i <= dayOfMonth; i++) {
+            days.push(new DateFormat(i, nowTime.month, nowTime.year))
+        }
+        for (let i = 1; i <= addTime.day; i++) {
+            days.push(new DateFormat(i, addTime.month, addTime.year))
+        }
+    } else {
+        for (let i = nowTime.day; i <= addTime.day; i++) {
+            days.push(new DateFormat(i, nowTime.month, nowTime.year))
+        }
+    }
 
+    return days
+}
 
 
 

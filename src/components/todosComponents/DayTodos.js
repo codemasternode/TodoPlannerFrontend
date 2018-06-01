@@ -11,12 +11,13 @@ class DayTodos extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            nowTime: new DateFormat(new Date().getDate(), new Date().getMonth(), new Date().getFullYear())
+            nowTime: new DateFormat(new Date().getDate(), new Date().getMonth(), new Date().getFullYear()),
         }
     }
     componentDidMount() {
         const addTime = new DateFormat()
         const nowTime = this.state.nowTime
+        const dayTodos = this.props.dayTodos.data
         addTime.increamentDays(6, nowTime)
 
         this.setState({
@@ -31,17 +32,23 @@ class DayTodos extends React.Component {
                 arrayToFilter.splice(index, 1, dayTodoModel)
 
             });
-            console.log(arrayToFilter)
             const filteredArray = _.filter(arrayToFilter, ({ date: { day, month, year } }) => {
                 return day >= nowTime.day && day <= addTime.day && month >= nowTime.month && month <= addTime.month && year >= nowTime.year && year <= addTime.year
             })
-            console.log(filteredArray)
             return filteredArray
         })
     }
+
+    renderTodos(data) {
+        console.log(this.state)
+        return <Week data={data} now={this.state.nowTime} add={this.state.addTime} />
+    }
+
     render() {
-        console.log(this.props)
-        return <div>Day Plannerasdasd</div>
+        const data = this.props.dayTodos.data
+        return <div>
+            {this.renderTodos(data)}
+        </div>
     }
 }
 

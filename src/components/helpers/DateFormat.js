@@ -5,6 +5,46 @@ class DateFormat {
         this.year = year
     }
 
+    renderMonth() {
+        if (this.month == 0) {
+            return 'styczeń'
+        } else if (this.month === 1) {
+            return 'luty'
+        }
+        else if (this.month === 2) {
+            return 'marzec'
+        }
+        else if (this.month === 3) {
+            return 'kwiecień'
+        }
+        else if (this.month === 4) {
+            return 'maj'
+        }
+        else if (this.month === 5) {
+            return 'czerwiec'
+        }
+        else if (this.month === 6) {
+            return 'lipiec'
+        }
+        else if (this.month === 7) {
+            return 'sierpień'
+        }
+        else if (this.month === 8) {
+            return 'wrzesień'
+        }
+        else if (this.month === 9) {
+            return 'październik'
+        }
+        else if (this.month === 10) {
+            return 'listopad'
+        }
+        else if (this.month === 11) {
+            return 'grudzień'
+        } else {
+            return 'grudzień'
+        }
+    }
+
     increamentDays(inc, { day, month, year }) {
         this.month = month
         this.year = year

@@ -43,7 +43,7 @@ class DayTodos extends React.Component {
 
     render() {
         const data = this.props.dayTodos.data
-        return <div>
+        return <div className="days-wrapper">
             {this.renderTodos(data)}
         </div>
     }

@@ -1,6 +1,7 @@
 .todo-nav {
   width: 100%;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  padding-left: 5em; }
   .todo-nav ul {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -21,6 +22,8 @@
     padding: 10px 20px; } }
 
 @media screen and (max-width: 450px) {
+  .todo-nav {
+    padding-left: 0; }
   .todo-nav ul {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -29,3 +32,41 @@
   .todo-nav-item {
     text-align: center;
     margin-top: 10px; } }
+
+.day {
+  width: 80%;
+  padding: 2em 1em;
+  margin-top: 20px;
+  background: #699cef;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  -webkit-animation-name: showDay;
+  animation-name: showDay;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s; }
+  .day:hover {
+    cursor: pointer;
+    background: #5588db; }
+
+@-webkit-keyframes showDay {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes showDay {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+.days-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column; }

@@ -16,7 +16,7 @@ export function failedFetch() {
     }
 }
 
-export function fetchDayTodos() {
+export function fetchDayTodos(nowTime, addTime, callback) {
     return (dispatch) => {
         axios('http://localhost:8080/allDayTodos', {
             method: 'GET',
@@ -26,7 +26,8 @@ export function fetchDayTodos() {
                 'x-auth': localStorage.getItem('tokenAuth')
             }
         }).then((res) => {
-            dispatch(successFetch(res))
+            const filteredData = callback(res.data)
+            dispatch(successFetch(filteredData))
         }).catch((e) => {
             dispatch(failedFetch())
         })

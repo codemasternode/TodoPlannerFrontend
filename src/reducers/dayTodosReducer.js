@@ -1,7 +1,6 @@
 import { successFatchedDayTodos, failFatchedDayTodos } from '../actions/dayTodos'
 
 export default function (state = {}, action) {
-    console.log(action)
     switch (action.type) {
         case successFatchedDayTodos:
             return {

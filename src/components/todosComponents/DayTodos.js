@@ -3,6 +3,8 @@ import { connect } from 'react-redux'
 import { fetchDayTodos } from '../../actions/dayTodos'
 import Week from './dayTodosComponents/Week'
 import DateFormat from '../helpers/DateFormat'
+import DayTodoModel from '../model/DayTodoModel'
+import _ from 'lodash'
 
 class DayTodos extends React.Component {
     constructor(props) {
@@ -12,20 +14,31 @@ class DayTodos extends React.Component {
         }
     }
     componentDidMount() {
-        this.props.fetchDayTodos()
-        const day = this.state.nowTime.day
-        const month = this.state.nowTime.month
-        const year = this.state.nowTime.year
         const addTime = new DateFormat()
-        addTime.increamentDays(6, { day, month, year })
-        console
+        const nowTime = this.state.nowTime
+        addTime.increamentDays(6, nowTime)
+
         this.setState({
-            addTime: addTime,
-            nowTime: new DateFormat(new Date().getDate(), new Date().getMonth(), new Date().getFullYear())
+            addTime: addTime
+        })
+
+        this.props.fetchDayTodos(nowTime, addTime, (arrayToFilter) => {
+            arrayToFilter.forEach(element => {
+                let { title, startsAt, endAt, dayOfMonth, month, year } = element
+                let dayTodoModel = new DayTodoModel(title, startsAt, endAt, new DateFormat(dayOfMonth, month, year))
+                let index = _.findIndex(arrayToFilter, element)
+                arrayToFilter.splice(index, 1, dayTodoModel)
+
+            });
+            // _.filter(arrayToFilter, (obj) => {
+            //     return 
+            // })
+            console.log(arrayToFilter)
+            return arrayToFilter
         })
     }
     render() {
-        console.log(this.state)
+        console.log(this.props)
         return <div>Day Plannerasdasd</div>
     }
 }

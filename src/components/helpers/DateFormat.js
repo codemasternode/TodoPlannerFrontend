@@ -19,14 +19,21 @@ class DateFormat {
                 this.month = 0
                 this.year += 1
             }
+        } else {
+            this.day += inc
         }
         return new DateFormat(this.day, this.month, this.year)
     }
+}
 
-
+export function check(nowTime, addTime, elementToCheck) {
 
 }
+
+
+
 function dayInMonth(year, month) {
     return new Date(year, month, 0).getDate();
 }
+
 export default DateFormat

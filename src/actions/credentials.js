@@ -21,7 +21,6 @@ export function failedFetchCred() {
 export default function fetchCredentials() {
     return (dispatch) => {
         if (localStorage.getItem('user_email') == undefined) {
-            console.log('Wyk')
             axios.get('http://localhost:8080/verify/me', {
                 headers: {
                     'x-auth': localStorage.getItem('tokenAuth')

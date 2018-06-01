@@ -15,13 +15,13 @@ class AfterLogin extends React.Component {
     }
 
     componentWillMount() {
-        console.log('Wykonanie')
+        
         this.props.fetchCredentials();
     }
 
 
     render() {
-        console.log(this.props)
+        
         return (
             <div className="after-login">
                 <div className="toDashboard">

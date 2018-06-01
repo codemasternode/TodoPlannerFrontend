@@ -5,21 +5,22 @@ import { getDays } from '../../helpers/DateFormat'
 
 const Week = ({ data, now, add }) => {
     const array = []
-    if (now && add) {
-        var days = getDays(now, add)
-    }
     if (data) {
-        days.forEach((ele) => {
+        var days = getDays(now, add)
+        days.forEach((ele, index) => {
             var match = _.filter(data, (obj) => {
                 return ele.day == obj.date.day
             })
-            array.push(<Day data={match} that={ele} />)
+
+            array.push(<Day key={index} data={match} that={ele} />)
         })
-        console.log(array)
+        return array.map(item => {
+            return item;
+        });
+    }else{
+        return <div>asd</div>
     }
-    return <div>War</div>
+
 }
-
-
 
 export default Week

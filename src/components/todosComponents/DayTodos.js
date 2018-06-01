@@ -10,19 +10,16 @@ import _ from 'lodash'
 class DayTodos extends React.Component {
     constructor(props) {
         super(props)
+        const nowTime = new DateFormat(new Date().getDate(), new Date().getMonth(), new Date().getFullYear())
         this.state = {
-            nowTime: new DateFormat(new Date().getDate(), new Date().getMonth(), new Date().getFullYear()),
+            nowTime: nowTime,
+            addTime: new DateFormat().increamentDays(6, nowTime)
         }
     }
     componentDidMount() {
         const addTime = new DateFormat()
         const nowTime = this.state.nowTime
         const dayTodos = this.props.dayTodos.data
-        addTime.increamentDays(6, nowTime)
-
-        this.setState({
-            addTime: addTime
-        })
 
         this.props.fetchDayTodos(nowTime, addTime, (arrayToFilter) => {
             arrayToFilter.forEach(element => {

@@ -29,15 +29,12 @@ class DayTodos extends React.Component {
                 arrayToFilter.splice(index, 1, dayTodoModel)
 
             });
-            const filteredArray = _.filter(arrayToFilter, ({ date: { day, month, year } }) => {
-                return day >= nowTime.day && day <= addTime.day && month >= nowTime.month && month <= addTime.month && year >= nowTime.year && year <= addTime.year
-            })
-            return filteredArray
+            
+            return arrayToFilter
         })
     }
 
     renderTodos(data) {
-        console.log(this.state)
         return <Week data={data} now={this.state.nowTime} add={this.state.addTime} />
     }
 

@@ -27,6 +27,7 @@ export function fetchDayTodos(nowTime, addTime, callback) {
             }
         }).then((res) => {
             const filteredData = callback(res.data)
+            console.log(res)
             dispatch(successFetch(filteredData))
         }).catch((e) => {
             dispatch(failedFetch())

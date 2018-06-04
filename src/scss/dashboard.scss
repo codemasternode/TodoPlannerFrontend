@@ -41,6 +41,7 @@
     width: 80%;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 60px;
     li {
         padding: 1em;
         border: 1px solid rgba(90, 85, 85, 0.356);
@@ -55,7 +56,14 @@
         margin-top: 20px;
         margin-bottom: 50px;
     }
+    div ,button{
+        min-width: 100px;
+    }
 }
+svg {
+    font-size: 40px !important;
+}
+
 
 @keyframes showDay
 {
@@ -71,6 +79,7 @@
     padding: 0;
     border: 0;
     transform: none !important;
+    min-width: 100px;
 }
 
 .days-wrapper {
@@ -83,6 +92,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
     width: 80%;
     padding: 2em 1em;
     margin-top: 20px;
@@ -99,5 +109,5 @@
 }
 
 .rotate {
-    transform: rotate(20deg);
+    transform: rotate(20deg) !important;
 }

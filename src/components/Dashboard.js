@@ -16,7 +16,7 @@ class Dashboard extends React.Component {
     render() {
         if (!this.props.loginResult.authenticated) {
             return <Redirect to="/login" />
-        }
+        } 
         return (
             <div className="container">
                 <TodoNav />
@@ -29,6 +29,7 @@ class Dashboard extends React.Component {
         )
     }
 }
+
 
 function mapStateToProps(state) {
     return { loginResult: state.loginResult }

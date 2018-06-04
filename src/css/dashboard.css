@@ -36,7 +36,8 @@
 .todo-list {
   width: 80%;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  margin-bottom: 60px; }
   .todo-list li {
     padding: 1em;
     border: 1px solid rgba(90, 85, 85, 0.356);
@@ -56,6 +57,11 @@
   .todo-list ul {
     margin-top: 20px;
     margin-bottom: 50px; }
+  .todo-list div, .todo-list button {
+    min-width: 100px; }
+
+svg {
+  font-size: 40px !important; }
 
 @-webkit-keyframes showDay {
   0% {
@@ -79,7 +85,8 @@
   border: 0;
   -webkit-transform: none !important;
   -ms-transform: none !important;
-  transform: none !important; }
+  transform: none !important;
+  min-width: 100px; }
 
 .days-wrapper {
   width: 100%;
@@ -101,6 +108,8 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
   width: 80%;
   padding: 2em 1em;
   margin-top: 20px;
@@ -117,6 +126,6 @@
     background: #5588db; }
 
 .rotate {
-  -webkit-transform: rotate(20deg);
-  -ms-transform: rotate(20deg);
-  transform: rotate(20deg); }
+  -webkit-transform: rotate(20deg) !important;
+  -ms-transform: rotate(20deg) !important;
+  transform: rotate(20deg) !important; }

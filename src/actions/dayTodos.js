@@ -30,7 +30,6 @@ export function removeDayTodoFail() {
         type: removeFail
     }
 }
-
 export function deleteDayTodo(_id) {
     return (dispatch) => {
         axios(`http://localhost:8080/deleteDayTodo/${_id}`, {

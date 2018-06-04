@@ -33,21 +33,16 @@
     text-align: center;
     margin-top: 10px; } }
 
-.day {
+.todo-list {
   width: 80%;
-  padding: 2em 1em;
-  margin-top: 20px;
-  background: #699cef;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 5px;
-  -webkit-animation-name: showDay;
-  animation-name: showDay;
-  -webkit-animation-duration: 0.5s;
-  animation-duration: 0.5s; }
-  .day:hover {
-    cursor: pointer;
-    background: #5588db; }
+  padding: 2em 4em; }
+  .todo-list li {
+    padding: 1em;
+    border: 1px solid brown;
+    border-radius: 5px;
+    margin-top: 5px; }
 
 @-webkit-keyframes showDay {
   0% {
@@ -80,7 +75,21 @@
   justify-content: space-between;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center; }
+  align-items: center;
+  width: 80%;
+  padding: 2em 1em;
+  margin-top: 20px;
+  background: #699cef;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  -webkit-animation-name: showDay;
+  animation-name: showDay;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s; }
+  .todo:hover {
+    cursor: pointer;
+    background: #5588db; }
 
 .rotate {
   -webkit-transform: rotate(20deg);

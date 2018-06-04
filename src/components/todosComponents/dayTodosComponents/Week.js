@@ -17,7 +17,7 @@ const Week = ({ data, now, add }) => {
             return item;
         });
     }else{
-        return <div>asd</div>
+        return <div>Trwa wczytywanie...</div>
     }
 
 }

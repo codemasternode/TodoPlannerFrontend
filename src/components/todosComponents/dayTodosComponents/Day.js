@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom'
 import DateFormat from '../../helpers/DateFormat'
 import $ from 'jquery'
 import { connect } from 'react-redux'
+import { deleteDayTodo, fetchDayTodos } from '../../../actions/dayTodos'
+import DayTodoModel from '../../model/DayTodoModel'
+import _ from 'lodash'
 
 class Day extends React.Component {
 
@@ -12,7 +15,20 @@ class Day extends React.Component {
     }
 
     removeItem(item) {
-        console.log(this.props.dayTodos)
+        console.log(item)
+        this.props.deleteDayTodo(item)
+        this.props.fetchDayTodos(this.props.now, this.props.add, (arrayToFilter) => {
+            arrayToFilter.forEach(element => {
+                let { _id, title, startsAt, endAt, dayOfMonth, month, year } = element
+                let dayTodoModel = new DayTodoModel(_id, title, startsAt, endAt, new DateFormat(dayOfMonth, month, year))
+                console.log(dayTodoModel)
+                let index = _.findIndex(arrayToFilter, element)
+                arrayToFilter.splice(index, 1, dayTodoModel)
+
+            });
+
+            return arrayToFilter
+        })
     }
 
     renderData() {
@@ -22,7 +38,7 @@ class Day extends React.Component {
                 return <li key={index}>
                     <div>{item.title}</div>
                     <div>{item.startsAt} - {item.endAt}</div>
-                    <button onClick={this.removeItem.bind(this, item)} className="minus">
+                    <button onClick={this.removeItem.bind(this, item._id)} className="minus">
                         <i className="fas fa-minus-circle"></i>
                     </button>
                 </li>
@@ -54,5 +70,5 @@ function mapStateToProps({ dayTodos }) {
     return { dayTodos }
 }
 
-export default connect(mapStateToProps)(Day)
+export default connect(mapStateToProps, { deleteDayTodo, fetchDayTodos })(Day)
 

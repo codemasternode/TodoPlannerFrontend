@@ -11,7 +11,7 @@ const Week = ({ data, now, add }) => {
             var match = _.filter(data, (obj) => {
                 return ele.day == obj.date.day
             })
-            array.push(<Day key={index} data={match} that={ele} />)
+            array.push(<Day key={index} data={match} that={ele} now={now}/>)
         })
         return array.map(item => {
             return item;

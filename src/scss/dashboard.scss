@@ -1,0 +1,113 @@
+@import "variables";
+
+.todo-nav {
+    width: 100%;
+    margin-bottom: 50px;
+    padding-left: 5em;
+    ul {
+        display: flex;
+        justify-content: flex-start;
+    }
+}
+
+.todo-nav-item {
+    margin-left: 10px;
+}
+@media screen and (min-width: 451px){
+    
+    .todo-nav-item {
+        border: $border-nav;
+        border-bottom: none;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .todo-nav {
+        padding-left: 0;
+    }
+    .todo-nav ul{
+        flex-direction: column;
+    }
+    .todo-nav-item {
+        text-align: center;
+        margin-top: 10px;
+    }
+}
+
+.todo-list {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 60px;
+    li {
+        padding: 1em;
+        border: 1px solid rgba(90, 85, 85, 0.356);
+        border-radius: 5px;
+        margin-top: 5px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    ul {
+        margin-top: 20px;
+        margin-bottom: 50px;
+    }
+    div ,button{
+        min-width: 100px;
+    }
+}
+svg {
+    font-size: 40px !important;
+}
+
+
+@keyframes showDay
+{
+  0% { opacity: 0 }
+  100% { opacity: 1 }
+}
+
+.minus {
+    width: auto;
+    height: auto;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    border: 0;
+    transform: none !important;
+    min-width: 100px;
+}
+
+.days-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.todo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 80%;
+    padding: 2em 1em;
+    margin-top: 20px;
+    background: $primary-color;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 5px;
+    animation-name: showDay;
+    animation-duration:0.5s; 
+    &:hover {
+        cursor: pointer;
+        background: $primary-color - 20
+    }
+}
+
+.rotate {
+    transform: rotate(20deg) !important;
+}

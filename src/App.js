@@ -8,8 +8,9 @@ import Login from './components/Login'
 import Nav from './components/Nav'
 import Register from './components/Register'
 import Footer from './components/Footer'
-
-
+import DayTodos from './components/todosComponents/DayTodos'
+import MonthTodos from './components/todosComponents/MonthTodos'
+import LongTodos from './components/todosComponents/LongTodos'
 
 class App extends Component {
 

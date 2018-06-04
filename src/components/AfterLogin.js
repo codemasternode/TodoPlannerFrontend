@@ -15,17 +15,17 @@ class AfterLogin extends React.Component {
     }
 
     componentWillMount() {
-        console.log('Wykonanie')
+        
         this.props.fetchCredentials();
     }
 
 
     render() {
-        console.log(this.props)
+        
         return (
             <div className="after-login">
                 <div className="toDashboard">
-                    <Link to='/Dashboard'>{this.props.user.email}</Link>
+                    <Link to='/dashboard'>{this.props.user.email}</Link>
                 </div>
                 <button onClick={this.logoutUser.bind(this)}>Wyloguj</button>
             </div>

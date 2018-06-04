@@ -40,8 +40,7 @@ class LoginForm extends React.Component {
 
     render() {
 
-        const { handleSubmit } = this.props;
-        console.log(this.props.loginResult)
+        const { handleSubmit } = this.props
         return (
             <form onSubmit={handleSubmit(this.onSubmit.bind(this))} id="k">
                 <Field type="text" label="Email" name="email" component={this.renderField} />

@@ -1,8 +1,8 @@
 import TodoModel from './TodoModel'
 
 class DayTodoModel extends TodoModel {
-    constructor(title, startsAt, endAt, date) {
-        super(title)
+    constructor(_id, title, startsAt, endAt, date) {
+        super(_id, title)
         this.startsAt = startsAt
         this.endAt = endAt
         this.date = date

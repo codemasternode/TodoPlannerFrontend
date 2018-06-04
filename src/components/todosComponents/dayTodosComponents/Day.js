@@ -2,27 +2,36 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import DateFormat from '../../helpers/DateFormat'
 import $ from 'jquery'
+import { connect } from 'react-redux'
 
 class Day extends React.Component {
 
     constructor(props) {
         super(props)
-        this.arrowClick = this.arrowClick.bind(this)
         this.renderData = this.renderData.bind(this)
     }
 
-    arrowClick(e) {
-        const icon = ReactDOM.findDOMNode(this.refs.ico)
-
+    removeItem(item) {
+        console.log(this.props.dayTodos)
     }
 
     renderData() {
         const todos = this.props.data
-        console.log(todos)
-        const todoItems = todos.map((item, index) => {
-            return <li key={index}>{item.title}</li>
-        })
-        return <ul>{todoItems}</ul>
+        if (todos.length !== 0) {
+            const todoItems = todos.map((item, index) => {
+                return <li key={index}>
+                    <div>{item.title}</div>
+                    <div>{item.startsAt} - {item.endAt}</div>
+                    <button onClick={this.removeItem.bind(this, item)} className="minus">
+                        <i className="fas fa-minus-circle"></i>
+                    </button>
+                </li>
+            })
+            return <ul>{todoItems}</ul>
+        } else {
+            <div>Dodaj coś</div>
+        }
+
     }
 
     render() {
@@ -41,5 +50,9 @@ class Day extends React.Component {
     }
 }
 
-export default Day
+function mapStateToProps({ dayTodos }) {
+    return { dayTodos }
+}
+
+export default connect(mapStateToProps)(Day)
 

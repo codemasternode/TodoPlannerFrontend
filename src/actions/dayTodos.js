@@ -21,13 +21,11 @@ export function fetchDayTodos(nowTime, addTime, callback) {
         axios('http://localhost:8080/allDayTodos', {
             method: 'GET',
             headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Content-Type': 'application/json',
                 'x-auth': localStorage.getItem('tokenAuth')
             }
         }).then((res) => {
+            console.log(res.data)
             const filteredData = callback(res.data)
-            console.log(res)
             dispatch(successFetch(filteredData))
         }).catch((e) => {
             dispatch(failedFetch())

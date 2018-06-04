@@ -1,5 +1,6 @@
 class TodoModel {
-    constructor(title) {
+    constructor(_id, title) {
+        this._id = _id
         this.title = title
     }
 }

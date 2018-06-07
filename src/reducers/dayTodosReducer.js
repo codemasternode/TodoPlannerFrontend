@@ -1,4 +1,4 @@
-import { successFatchedDayTodos, failFatchedDayTodos, removeSuccess } from '../actions/dayTodos'
+import { successFatchedDayTodos, failFatchedDayTodos, removeSuccess, addTodo } from '../actions/dayTodos'
 import _ from 'lodash'
 
 export default function (state = {}, action) {
@@ -9,6 +9,12 @@ export default function (state = {}, action) {
             }
         case failFatchedDayTodos:
             return state
+        case addTodo:
+            const { todo } = action
+            console.log(todo)
+            return {
+                ...state, todo
+            }
         case removeSuccess:
             console.log(state)
             const newState = _.filter(state.data, (ele) => {

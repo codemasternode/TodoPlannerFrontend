@@ -4,6 +4,8 @@ export const successFatchedDayTodos = 'success_Fetched_DayTodos'
 export const failFatchedDayTodos = 'fail_Fetched_DayTodos'
 export const removeSuccess = 'remove_Day_Todo_Success'
 export const removeFail = 'remove_Day_Todo_Fail'
+export const addTodo = 'add_Todo_success'
+export const failAddTodo = 'add_Todo_fail'
 
 export function successFetch(payload) {
     return {
@@ -30,6 +32,21 @@ export function removeDayTodoFail() {
         type: removeFail
     }
 }
+
+export function successAddTodo(todo) {
+    return {
+        type: addTodo,
+        todo
+    }
+}
+
+export function failedAddTodo() {
+    return {
+        type: failAddTodo
+    }
+}
+
+
 export function deleteDayTodo(_id) {
     return (dispatch) => {
         axios(`http://localhost:8080/deleteDayTodo/${_id}`, {
@@ -58,6 +75,21 @@ export function fetchDayTodos(nowTime, addTime, callback) {
             dispatch(successFetch(filteredData))
         }).catch((e) => {
             dispatch(failedFetch())
+        })
+    }
+}
+
+export function addDayTodo(todo) {
+    return (dispatch) => {
+        axios('http://localhost:8080/newDayTodo', {
+            method: 'POST',
+            headers: {
+                'x-auth': localStorage.getItem('tokenAuth')
+            }
+        }).then((res) => {
+            dispatch(successAddTodo(todo))
+        }).catch((e) => {
+            dispatch(failedAddTodo())
         })
     }
 }

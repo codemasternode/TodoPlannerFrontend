@@ -79,7 +79,6 @@ export function fetchDayTodos(nowTime, addTime, callback) {
 }
 
 export function addDayTodo(todo) {
-    console.log(todo)
     return (dispatch) => {
         axios('http://localhost:8080/newDayTodo', {
             method: 'POST',

@@ -11,16 +11,13 @@ export default function (state = {}, action) {
             return state
         case addTodo:
             const { todo } = action
-            console.log(todo)
-            return {
-                ...state, todo
-            }
+            state.data.push(todo)
+            return state
         case removeSuccess:
-            console.log(state)
-            const newState = _.filter(state.data, (ele) => {
+
+            let newState = _.filter(state.data, (ele) => {
                 return ele._id != action.payload
             })
-            console.log(newState)
             return newState
         default:
             return state

@@ -70,7 +70,6 @@ export function fetchDayTodos(nowTime, addTime, callback) {
                 'x-auth': localStorage.getItem('tokenAuth')
             }
         }).then((res) => {
-            console.log(res.data)
             const filteredData = callback(res.data)
             dispatch(successFetch(filteredData))
         }).catch((e) => {
@@ -80,12 +79,14 @@ export function fetchDayTodos(nowTime, addTime, callback) {
 }
 
 export function addDayTodo(todo) {
+    console.log(todo)
     return (dispatch) => {
         axios('http://localhost:8080/newDayTodo', {
             method: 'POST',
             headers: {
                 'x-auth': localStorage.getItem('tokenAuth')
-            }
+            },
+            data: todo
         }).then((res) => {
             dispatch(successAddTodo(todo))
         }).catch((e) => {

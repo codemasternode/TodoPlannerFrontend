@@ -17,6 +17,10 @@ class BeforeLogin extends React.Component {
         }
     }
 
+    componentWillUnmount() {
+
+    }
+
     render() {
         return (
             <div className="box" >
@@ -75,7 +79,7 @@ class BeforeLogin extends React.Component {
                     height: $(loginForm).height(),
                     pos: $(loginForm).position()
                 }
-                
+
                 if (!((loginFormPos.pos.left < e.clientX) && (loginFormPos.pos.left + loginFormPos.width > e.clientX) && (loginFormPos.pos.top < e.clientY) && (loginFormPos.pos.top + loginFormPos.height > e.clientY))) {
                     $(loginForm).removeClass('visibility-logining')
                 }

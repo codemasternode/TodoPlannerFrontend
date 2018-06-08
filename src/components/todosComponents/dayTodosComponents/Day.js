@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import { deleteDayTodo, fetchDayTodos } from '../../../actions/dayTodos'
 import DayTodoModel from '../../model/DayTodoModel'
 import _ from 'lodash'
-import NewDayTodo from './addNewDayTodo'
+import NewDayTodo from './NewDayTodo'
 
 class Day extends React.Component {
 
@@ -17,7 +17,6 @@ class Day extends React.Component {
 
     renderData(color) {
         const data = this.props.data
-        console.log(color)
         const bor = {
             border: `1px solid rgb(${color.first},${color.second},${color.third})`,
             borderRadius: `5px`
@@ -71,6 +70,7 @@ class Day extends React.Component {
                     <h3>{data.length}</h3>
                 </div>
                 <div className="toggle" ref="dayToggle">
+                    <NewDayTodo day={thisDay}/>
                     <ul>
                         {this.renderData(color)}
                     </ul>

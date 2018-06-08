@@ -63,14 +63,16 @@ class Day extends React.Component {
             backgroundColor: `rgb(${color.first},${color.second},${color.third})`,
         }
 
+        const styleClasses = `toggle ${data.length == 0 ? 'untoggle' : ''}`
+
         return (
             <div className="day-wrapper">
                 <div className="day" style={changeColor} ref="day">
                     <h3>{thisDay.day} {thisDay.renderMonth()}</h3>
                     <h3>{data.length}</h3>
                 </div>
-                <div className="toggle" ref="dayToggle">
-                    <NewDayTodo day={thisDay}/>
+                <div className={styleClasses} ref="dayToggle">
+                    <NewDayTodo day={thisDay} />
                     <ul>
                         {this.renderData(color)}
                     </ul>

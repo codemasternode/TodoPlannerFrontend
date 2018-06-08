@@ -138,3 +138,7 @@
   display: flex;
   -ms-flex-pack: distribute;
   justify-content: space-around; }
+
+.untoggle {
+  display: none;
+  padding-left: 10%; }

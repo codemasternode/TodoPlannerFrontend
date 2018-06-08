@@ -47,29 +47,22 @@ class DateFormat {
         }
     }
 
-    countWeeks(now) {
-        console.log(now)
+    countWeeks() {
         const dayMonth = dayInMonth(this.year, this.month)
-        console.log(dayMonth)
         let firstDay = new Date(this.year, this.month, 1, 12, 12, 12)
         firstDay = firstDay.getDay()
-
         let array = []
         let counter = 0
         for (let i = 1; i < dayMonth - 1; i++) {
             firstDay = firstDay + 1
             let suma = firstDay % 7
-
             if (suma == 0 || i == dayMonth - 2) {
-                array.push(counter)
+                array.push(new Week(counter, this.month))
                 counter = 0
             }
             counter++
-            console.log(suma)
         }
-        console.log(array)
-
-
+        return array
     }
 
     increamentDays(inc, { day, month, year }) {

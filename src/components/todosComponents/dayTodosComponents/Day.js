@@ -35,6 +35,15 @@ class Day extends React.Component {
         return <h4>Musisz dodać coś</h4>
     }
 
+    componentDidMount() {
+        const day = $(this.refs.day)
+        const toggle = $(this.refs.dayToggle)
+        $(day).click(() => {
+            $(toggle).slideToggle()
+        })
+
+    }
+
     render() {
         const { day, month, year } = this.props.that
         const thisDay = new DateFormat(day, month, year)
@@ -57,11 +66,11 @@ class Day extends React.Component {
 
         return (
             <div className="day-wrapper">
-                <div className="day" style={changeColor}>
+                <div className="day" style={changeColor} ref="day">
                     <h3>{thisDay.day} {thisDay.renderMonth()}</h3>
                     <h3>{data.length}</h3>
                 </div>
-                <div className="toggle">
+                <div className="toggle" ref="dayToggle">
                     <ul>
                         {this.renderData(color)}
                     </ul>

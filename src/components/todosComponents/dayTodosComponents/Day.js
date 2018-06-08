@@ -6,76 +6,86 @@ import { connect } from 'react-redux'
 import { deleteDayTodo, fetchDayTodos } from '../../../actions/dayTodos'
 import DayTodoModel from '../../model/DayTodoModel'
 import _ from 'lodash'
+import NewDayTodo from './NewDayTodo'
 
 class Day extends React.Component {
 
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
         this.renderData = this.renderData.bind(this)
-        this.arrowClick = this.arrowClick.bind(this)
     }
 
-    removeItem(item) {
-        console.log(item)
-        this.props.deleteDayTodo(item)
-        this.props.fetchDayTodos(this.props.now, this.props.add, (arrayToFilter) => {
-            arrayToFilter.forEach(element => {
-                let { _id, title, startsAt, endAt, dayOfMonth, month, year } = element
-                let dayTodoModel = new DayTodoModel(_id, title, startsAt, endAt, new DateFormat(dayOfMonth, month, year))
-                console.log(dayTodoModel)
-                let index = _.findIndex(arrayToFilter, element)
-                arrayToFilter.splice(index, 1, dayTodoModel)
-
-            });
-
-            return arrayToFilter
-        })
-    }
-
-    renderData() {
-        const todos = this.props.data
-        if (todos.length !== 0) {
-            const todoItems = todos.map((item, index) => {
-                return <li key={index}>
-                    <div>{item.title}</div>
-                    <div>{item.startsAt} - {item.endAt}</div>
-                    <button onClick={this.removeItem.bind(this, item._id)} className="minus">
-                        <i className="fas fa-minus-circle"></i>
-                    </button>
-                </li>
-            })
-            return <ul className={`todo-list list-${this.props.that.day}`} >{todoItems}</ul>
+    renderData(color) {
+        const data = this.props.data
+        const bor = {
+            border: `1px solid rgb(${color.first},${color.second},${color.third})`,
+            borderRadius: `5px`
         }
-
+        if (data.length != 0) {
+            return data.map((value, index) => {
+                return (
+                    <li className="todo" key={index} style={bor}>
+                        <h4>{value.title}</h4>
+                        <h4>{value.startsAt} - {value.endAt}</h4>
+                    </li>
+                )
+            })
+        }
+        return <h4>Musisz dodać coś</h4>
     }
 
-    arrowClick() {
-        const list = $(`.list-${this.props.that.day}`)
-        $(list).slideToggle(400)
+    componentDidMount() {
+        const day = $(this.refs.day)
+        const toggle = $(this.refs.dayToggle)
+        $(day).click(() => {
+            $(toggle).slideToggle()
+        })
+
     }
 
     render() {
-        const { that, data } = this.props
-        const day = new DateFormat(that.day, that.month, that.year)
-        return (<div className="day" onClick={this.arrowClick}>
-            <div className="todo">
-                <h3>{that.day + ' ' + day.renderMonth()}</h3>
-                <div className="info">
-                    <p>{data.length}</p>
-                    <i ref="ico" className="far fa-arrow-alt-circle-down"></i>
+        const { day, month, year } = this.props.that
+        const thisDay = new DateFormat(day, month, year)
+        const data = this.props.data
+        const color = {
+            first: 66,
+            second: 134,
+            third: 244,
+            opacity: 0.7
+        }
+        data.forEach(element => {
+            color.first = color.first - 20
+            color.second = color.second - 20
+            color.third = color.third + 40
+        });
+
+        const changeColor = {
+            backgroundColor: `rgb(${color.first},${color.second},${color.third})`,
+        }
+
+        const styleClasses = `toggle ${data.length == 0 ? 'untoggle' : ''}`
+
+        return (
+            <div className="day-wrapper">
+                <div className="day" style={changeColor} ref="day">
+                    <h3>{thisDay.day} {thisDay.renderMonth()}</h3>
+                    <h3>{data.length}</h3>
+                </div>
+                <div className={styleClasses} ref="dayToggle">
+                    <NewDayTodo day={thisDay} />
+                    <ul>
+                        {this.renderData(color)}
+                    </ul>
                 </div>
             </div>
-            <div>
-                {this.renderData()}
-            </div>
-            <div className="day-todo"></div>
-        </div>)
+        )
     }
 }
 
 function mapStateToProps({ dayTodos }) {
-    return { dayTodos }
+    return {
+        dayTodos
+    }
 }
-
 export default connect(mapStateToProps, { deleteDayTodo, fetchDayTodos })(Day)
 

@@ -33,36 +33,6 @@
     text-align: center;
     margin-top: 10px; } }
 
-.todo-list {
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 60px; }
-  .todo-list li {
-    padding: 1em;
-    border: 1px solid rgba(90, 85, 85, 0.356);
-    border-radius: 5px;
-    margin-top: 5px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -ms-flex-wrap: wrap;
-    flex-wrap: wrap;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center; }
-  .todo-list ul {
-    margin-top: 20px;
-    margin-bottom: 50px; }
-  .todo-list div, .todo-list button {
-    min-width: 100px; }
-
-svg {
-  font-size: 40px !important; }
-
 @-webkit-keyframes showDay {
   0% {
     opacity: 0; }
@@ -75,57 +45,100 @@ svg {
   100% {
     opacity: 1; } }
 
-.minus {
-  width: auto;
-  height: auto;
-  background: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  padding: 0;
-  border: 0;
-  -webkit-transform: none !important;
-  -ms-transform: none !important;
-  transform: none !important;
-  min-width: 100px; }
-
 .days-wrapper {
-  width: 100%;
+  width: 80%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto; }
+
+.day {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  border-radius: 5px;
+  margin-top: 20px;
+  padding: 20px;
+  color: #f3f3f3;
+  -webkit-transition: 100ms;
+  -o-transition: 100ms;
+  transition: 100ms;
+  cursor: pointer; }
+  .day:hover {
+    -webkit-transform: scale(1.009);
+    -ms-transform: scale(1.009);
+    transform: scale(1.009);
+    -webkit-box-shadow: 2px 2px 5px 2px #888888;
+    box-shadow: 2px 2px 5px 2px #888888; }
+  .day h3 {
+    font-weight: 400;
+    font-size: 23px; }
+
+.toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
   flex-direction: column; }
+  .toggle ul {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 3em 2em; }
 
 .todo {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  width: 80%;
-  padding: 2em 1em;
-  margin-top: 20px;
-  background: #699cef;
-  margin-left: auto;
-  margin-right: auto;
-  border-radius: 5px;
-  -webkit-animation-name: showDay;
-  animation-name: showDay;
-  -webkit-animation-duration: 0.5s;
-  animation-duration: 0.5s; }
-  .todo:hover {
-    cursor: pointer;
-    background: #5588db; }
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  margin-top: 5px; }
 
-.rotate {
-  -webkit-transform: rotate(20deg) !important;
-  -ms-transform: rotate(20deg) !important;
-  transform: rotate(20deg) !important; }
+.form-days {
+  width: 50%;
+  padding: 5em 2em;
+  padding-bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+
+.form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+  justify-content: space-around; }
+
+.untoggle {
+  display: none;
+  padding-left: 10%; }

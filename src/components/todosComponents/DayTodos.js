@@ -25,7 +25,6 @@ class DayTodos extends React.Component {
             arrayToFilter.forEach(element => {
                 let { _id, title, startsAt, endAt, dayOfMonth, month, year } = element
                 let dayTodoModel = new DayTodoModel(_id, title, startsAt, endAt, new DateFormat(dayOfMonth, month, year))
-                console.log(dayTodoModel)
                 let index = _.findIndex(arrayToFilter, element)
                 arrayToFilter.splice(index, 1, dayTodoModel)
 

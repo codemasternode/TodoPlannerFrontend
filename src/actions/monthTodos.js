@@ -51,3 +51,14 @@ export function deleteMonthTodo(id) {
         })
     }
 }
+
+export function addMonthTodo(values) {
+    return (dispatch) => {
+        axios('http://localhost:8080/newMonthTodo', {
+            method: 'POST',
+            headers: {
+                'x-auth': localStorage.getItem('tokenAuth')
+            }
+        })
+    }
+}

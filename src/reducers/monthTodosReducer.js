@@ -1,4 +1,5 @@
-import { failFatchedMonthTodos, successFatchedMonthTodos } from '../actions/monthTodos'
+import { failFatchedMonthTodos, successFatchedMonthTodos, successDeleteMonthTodo } from '../actions/monthTodos'
+import _ from 'lodash'
 
 
 export default function (state = {}, action) {
@@ -8,6 +9,10 @@ export default function (state = {}, action) {
             return action.months
         case failFatchedMonthTodos:
             return state
+        case successDeleteMonthTodo:
+            return _.filter(state.months, (value) => {
+                return value._id != action.id
+            })
         default:
             return state
     }

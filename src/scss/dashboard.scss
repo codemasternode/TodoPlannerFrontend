@@ -138,18 +138,30 @@
     border: $border-nav;
     background: $primary-color;
     color: white;
+    margin-top: 20px;
 }
 
 
 .cell {
     display: flex;
     height: 50px;
-    justify-content: center;
+    justify-content: space-around;
+    flex-direction: row;
     border: $border-nav;
+    align-items: center;
     &:hover {
         background: rgb(243, 243, 243);
         cursor: pointer;
     }
+
+}
+
+.cross {
+
+}
+
+.cross:hover {
+    transform: scale(1.1)
 }
 
 

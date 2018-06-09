@@ -2,6 +2,7 @@ import axios from 'axios'
 
 export const successFatchedMonthTodos = 'success_Fetched_MonthTodos'
 export const failFatchedMonthTodos = 'fail_Fetched_MonthTodos'
+export const successDeleteMonthTodo = 'success_Delete_MonthTodo'
 
 export function successFetch(months) {
     return {
@@ -16,6 +17,13 @@ export function failedFetch() {
     }
 }
 
+export function successDelete(id) {
+    return {
+        type: successDeleteMonthTodo,
+        id
+    }
+}
+
 export function fetchMonthTodos() {
     return (dispatch) => {
         axios('http://localhost:8080/allMonthTodos', {
@@ -27,6 +35,19 @@ export function fetchMonthTodos() {
             dispatch(successFetch(res.data))
         }).catch((e) => {
             dispatch(failedFetch())
+        })
+    }
+}
+
+export function deleteMonthTodo(id) {
+    return (dispatch) => {
+        axios(`http://localhost:8080/deleteMonthTodo/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'x-auth': localStorage.getItem('tokenAuth')
+            }
+        }).then((res) => {
+            dispatch(successDelete(id))
         })
     }
 }

@@ -2,6 +2,8 @@ import React from 'react';
 import DateFormat from '../helpers/DateFormat'
 import Week from '../helpers/Week'
 import Column from './monthTodosComponents/Column'
+import { fetchMonthTodos } from '../../actions/monthTodos'
+import { connect } from 'react-redux'
 
 class MonthTodos extends React.Component {
     constructor() {
@@ -14,6 +16,7 @@ class MonthTodos extends React.Component {
 
     componentDidMount() {
         const { now } = this.state
+        this.props.fetchMonthTodos()
         const weeks = now.countWeeks()
         this.setState({
             weeks
@@ -41,4 +44,10 @@ class MonthTodos extends React.Component {
     }
 }
 
-export default MonthTodos
+function mapStateToProps({ monthTodos }) {
+    return {
+        monthTodos
+    }
+}
+
+export default connect(mapStateToProps, { fetchMonthTodos })(MonthTodos)

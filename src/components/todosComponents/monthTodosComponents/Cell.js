@@ -3,7 +3,7 @@ import React from 'react'
 const Cell = ({ data }) => {
     return (
         <div className="cell">
-            {data.title}
+            <h4>{data.title}</h4>
         </div>
     )
 }

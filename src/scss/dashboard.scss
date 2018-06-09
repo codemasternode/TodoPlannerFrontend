@@ -122,6 +122,7 @@
     h3 {
         text-align: center;
     }
+    height: 100%;
 }
 
 .column {
@@ -130,6 +131,7 @@
     flex-direction: column;
     width: 20%;
     min-width: 200px;
+    height: 100%;
 }
 
 .head {
@@ -137,4 +139,17 @@
     background: $primary-color;
     color: white;
 }
+
+
+.cell {
+    display: flex;
+    height: 50px;
+    justify-content: center;
+    border: $border-nav;
+    &:hover {
+        background: rgb(243, 243, 243);
+        cursor: pointer;
+    }
+}
+
 

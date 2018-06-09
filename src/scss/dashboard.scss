@@ -113,3 +113,28 @@
 }
 
 
+.month-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    h3 {
+        text-align: center;
+    }
+}
+
+.column {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 20%;
+    min-width: 200px;
+}
+
+.head {
+    border: $border-nav;
+    background: $primary-color;
+    color: white;
+}
+

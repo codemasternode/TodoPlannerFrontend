@@ -3,6 +3,7 @@ import axios from 'axios'
 export const successFatchedMonthTodos = 'success_Fetched_MonthTodos'
 export const failFatchedMonthTodos = 'fail_Fetched_MonthTodos'
 export const successDeleteMonthTodo = 'success_Delete_MonthTodo'
+export const successAddMonthTodo = 'success_Add_MonthTodo'
 
 export function successFetch(months) {
     return {
@@ -23,6 +24,14 @@ export function successDelete(id) {
         id
     }
 }
+
+export function successAdd(todo) {
+    return {
+        type: successAddMonthTodo,
+        todo
+    }
+}
+
 
 export function fetchMonthTodos() {
     return (dispatch) => {
@@ -56,9 +65,12 @@ export function addMonthTodo(values) {
     return (dispatch) => {
         axios('http://localhost:8080/newMonthTodo', {
             method: 'POST',
+            data: values,
             headers: {
                 'x-auth': localStorage.getItem('tokenAuth')
             }
+        }).then((res) => {
+            dispatch(successAdd(values))
         })
     }
 }

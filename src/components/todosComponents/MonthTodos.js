@@ -32,7 +32,6 @@ class MonthTodos extends React.Component {
                 let data = _.filter(monthTodos, (item) => {
                     return item.week == index
                 })
-                console.log(data)
                 return <Column key={index} week={value} data={data} index={index} />
             })
         }

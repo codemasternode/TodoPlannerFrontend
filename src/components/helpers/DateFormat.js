@@ -57,7 +57,7 @@ class DateFormat {
             firstDay = firstDay + 1
             let suma = firstDay % 7
             if (suma == 0 || i == dayMonth - 2) {
-                array.push(new Week(counter, this.month))
+                array.push(new Week(counter, this.month, this.year))
                 counter = 0
             }
             counter++

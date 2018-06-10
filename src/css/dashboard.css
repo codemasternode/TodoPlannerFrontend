@@ -198,6 +198,10 @@
   .cell:hover {
     background: #f3f3f3;
     cursor: pointer; }
+  .cell textarea {
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.2); }
 
 .cross:hover {
   -webkit-transform: scale(1.1);

@@ -12,6 +12,8 @@ class Column extends React.Component {
         }
         this.renderDate = this.renderDate.bind(this)
         this.addNewTodo = this.addNewTodo.bind(this)
+        this.add = this.add.bind(this)
+    
     }
 
     componentWillReceiveProps(nextProps) {
@@ -34,18 +36,18 @@ class Column extends React.Component {
         }
 
     }
-
     addNewTodo(e) {
-        if (this.props.data) {
-
-        }
         this.setState({
             render: true
         })
     }
 
+    add(value) {
+        console.log(value)
+    }
+
     renderAdd() {
-        return <div>dawaj</div>
+        return <NewMonthTodo info={this.props.week} add={(e) => this.add(e)} />
     }
 
     render() {

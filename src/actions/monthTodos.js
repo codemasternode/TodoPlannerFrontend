@@ -62,6 +62,7 @@ export function deleteMonthTodo(id) {
 }
 
 export function addMonthTodo(values) {
+    console.log(values)
     return (dispatch) => {
         axios('http://localhost:8080/newMonthTodo', {
             method: 'POST',

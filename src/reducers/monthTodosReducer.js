@@ -7,7 +7,7 @@ export default function (state = {}, action) {
         case successFatchedMonthTodos:
             return action.months
         case successAddMonthTodo:
-            return state.push(action.todo)
+            return state.concat(action.todo)
         case failFatchedMonthTodos:
             return state
         case successDeleteMonthTodo:

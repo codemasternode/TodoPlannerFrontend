@@ -113,3 +113,65 @@
 }
 
 
+.month-wrapper {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    h3 {
+        text-align: center;
+    }
+    height: 100%;
+}
+
+.column {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 20%;
+    min-width: 200px;
+    height: 100%;
+}
+
+.head {
+    border: $border-nav;
+    background: $primary-color;
+    color: white;
+    margin-top: 20px;
+}
+
+
+.cell {
+    display: flex;
+    height: 50px;
+    justify-content: space-around;
+    flex-direction: row;
+    border: $border-nav;
+    align-items: center;
+    &:hover {
+        background: rgb(243, 243, 243);
+        cursor: pointer;
+    }
+    textarea {
+        width: 100%;
+        height: 100%;
+        border: $border-nav;
+    }
+
+}
+
+.cross {
+
+}
+
+.cross:hover {
+    transform: scale(1.1)
+}
+
+.plus {
+    text-align: center;
+    padding: 20px;
+}
+
+

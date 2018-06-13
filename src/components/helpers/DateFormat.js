@@ -1,3 +1,5 @@
+import Week from './Week'
+
 class DateFormat {
     constructor(day, month, year) {
         this.day = day
@@ -43,6 +45,24 @@ class DateFormat {
         } else {
             return 'grudzień'
         }
+    }
+
+    countWeeks() {
+        const dayMonth = dayInMonth(this.year, this.month)
+        let firstDay = new Date(this.year, this.month, 1, 12, 12, 12)
+        firstDay = firstDay.getDay()
+        let array = []
+        let counter = 0
+        for (let i = 1; i < dayMonth - 1; i++) {
+            firstDay = firstDay + 1
+            let suma = firstDay % 7
+            if (suma == 0 || i == dayMonth - 2) {
+                array.push(new Week(counter, this.month, this.year))
+                counter = 0
+            }
+            counter++
+        }
+        return array
     }
 
     increamentDays(inc, { day, month, year }) {

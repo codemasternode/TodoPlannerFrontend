@@ -1,10 +1,17 @@
 import React from 'react'
-import { deleteMonthTodo } from '../../../actions/monthTodos'
+import { deleteMonthTodo, fetchMonthTodos } from '../../../actions/monthTodos'
 import { connect } from 'react-redux'
 
 class Cell extends React.Component {
 
-    delete(id) {
+    delete(id, callback) {
+        if (id === undefined) {
+            let monthTodos = this.props
+            this.props.fetchMonthTodos()
+            this.props.deleteMonthTodo(id)
+            return null
+        }
+        console.log(id)
         this.props.deleteMonthTodo(id)
     }
 
@@ -21,4 +28,10 @@ class Cell extends React.Component {
     }
 }
 
-export default connect(null, { deleteMonthTodo })(Cell)
+function mapStateToProps({ monthTodos }) {
+    return {
+        monthTodos
+    }
+}
+
+export default connect(mapStateToProps, { deleteMonthTodo, fetchMonthTodos })(Cell)

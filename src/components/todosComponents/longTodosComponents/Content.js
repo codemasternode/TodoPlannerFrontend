@@ -6,20 +6,22 @@ class Content extends React.Component {
 
 
     blur(e) {
-        console.log('dawaj')
+        console.log(e)
     }
 
     click(e) {
         const row = $(`#row-${this.props.index}`)
+        let replacement = $(document.createElement('textarea'));
+        $(replacement).blur((e) => {
+            this.blur(e.target.value)
+            $(replacement).replaceWith(row)
+            row.append(e.target.value)
+        })
         if (row[0].firstChild) {
-            let replacement = $(document.createElement('textarea'));
             replacement.append(row[0].firstChild.data)
-            replacement.blur(() => {
-                console.log('sam nieiwem')
-            })
             $(row).replaceWith(replacement)
         } else {
-            $(row).replaceWith(`<textarea></textarea>`)
+            $(row).replaceWith(replacement)
         }
 
     }

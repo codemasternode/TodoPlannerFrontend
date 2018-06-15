@@ -1,12 +1,13 @@
 import React from 'react'
 import $ from 'jquery'
+import { connect } from 'react-redux'
+import { updateLongTodo } from '../../../actions/longTodos'
+
 
 class Content extends React.Component {
 
-
-
     blur(e) {
-        console.log(e)
+        this.props.updateLongTodo({ when: this.props.index, title: e })
     }
 
     click(e) {
@@ -28,7 +29,6 @@ class Content extends React.Component {
 
     render() {
         const { content } = this.props
-        console.log(content)
         return (
             <div className="row-content" onMouseDown={this.click.bind(this)} id={`row-${this.props.index}`}>
                 {content.length != 0 && content[0].title}
@@ -37,4 +37,4 @@ class Content extends React.Component {
     }
 }
 
-export default Content
+export default connect(undefined, { updateLongTodo })(Content)

@@ -24,5 +24,31 @@ export function fetchLongTodos() {
                 dispatch(failed())
             })
     }
+}
 
+
+export function updateLongTodo(values) {
+    console.log(values)
+    function success(payload) {
+        return {
+            type: TodosConsts.LONG_POST_SUCCESS,
+            payload
+        }
+    }
+
+    function failed() {
+        return {
+            type: TodosConsts.LONG_POST_FAILED
+        }
+    }
+
+    return (dispatch) => {
+        longTodosService.update(values)
+            .then((ok) => {
+                console.log(ok)
+                dispatch(success())
+            }, (err) => {
+                dispatch(failed())
+            })
+    }
 }

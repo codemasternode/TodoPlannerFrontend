@@ -6,6 +6,10 @@ export default function (state = {}, action) {
             return action.payload
         case TodosConsts.LONG_FETCH_FAILED:
             return state
+        case TodosConsts.LONG_UPDATE_SUCCESS:
+            return state
+        case TodosConsts.LONG_UPDATE_FAILED:
+            return state
         default:
             return state
     }

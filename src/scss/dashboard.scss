@@ -174,4 +174,41 @@
     padding: 20px;
 }
 
+.long-todos{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    margin-bottom: 10px;
+    transition: 200ms;
+    &:hover{
+        transform: scale(1.04)
+    }
+    textarea {
+        width: 100%;
+    }
+}
+
+.row-head {
+    min-width: 38%;
+    background: $primary-color;
+    min-height: 50px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.row-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $primary-color;
+    width: 100%;
+}
+
 

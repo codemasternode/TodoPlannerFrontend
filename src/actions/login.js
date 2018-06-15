@@ -31,8 +31,8 @@ export default function loginUser(values, callback) {
                     dispatch(loginOnFailed(res))
                     dispatch(reset('loginForm'))
                 }
-            }).catch((e) => {
-                dispatch(loginOnFailed(e))
+            }, err => {
+                dispatch(loginOnFailed(err))
                 dispatch(reset('loginForm'))
             })
     }

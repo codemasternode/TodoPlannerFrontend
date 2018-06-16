@@ -1,4 +1,8 @@
 import axios from 'axios'
+import { logoutOnSuccess } from './logout'
+import history from '../components/helpers/history'
+import { push } from 'react-router-redux'
+
 
 export const successFatchedDayTodos = 'success_Fetched_DayTodos'
 export const failFatchedDayTodos = 'fail_Fetched_DayTodos'
@@ -57,12 +61,12 @@ export function deleteDayTodo(_id) {
         }).then((res) => {
             dispatch(removeDayTodoSuccess(_id))
         }).catch((e) => {
-            console.log(e)
+            history.push('/')
         })
     }
 }
 
-export function fetchDayTodos(nowTime, addTime, callback) {
+export function fetchDayTodos(nowTime, addTime, callback, rej) {
     return (dispatch) => {
         axios('http://localhost:8080/allDayTodos', {
             method: 'GET',
@@ -73,7 +77,7 @@ export function fetchDayTodos(nowTime, addTime, callback) {
             const filteredData = callback(res.data)
             dispatch(successFetch(filteredData))
         }).catch((e) => {
-            dispatch(failedFetch())
+            dispatch(push('/dashboard'))
         })
     }
 }
@@ -89,7 +93,7 @@ export function addDayTodo(todo) {
         }).then((res) => {
             dispatch(successAddTodo(todo))
         }).catch((e) => {
-            dispatch(failedAddTodo())
+            history.push('/dashboard')
         })
     }
 }

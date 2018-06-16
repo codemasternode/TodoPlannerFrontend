@@ -107,3 +107,20 @@ label {
 #g:hover{
     cursor: pointer;
 }
+
+.toDashboard {
+    border: 1px solid rgba(78, 78, 78, 0.5);
+    border-radius: 5px;
+    padding: 2px 5px !important;
+    margin-right: 10px;
+    background: rgb(135, 238, 109);
+    a{
+        display: block;
+        min-width: fit-content;
+        width: 15vw;
+        height: 40px;
+        text-align: center;
+        box-sizing: border-box;
+        padding-top: 10px;
+    }
+}

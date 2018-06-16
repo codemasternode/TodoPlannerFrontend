@@ -5,6 +5,8 @@ import overallData from './overallDataReducer'
 import registerReducer from './registerReducer'
 import dayTodos from './dayTodosReducer'
 import monthTodos from './monthTodosReducer'
+import longTodos from './longTodosReducer'
+import { routerReducer } from 'react-router-redux'
 
 const rootReducer = combineReducers({
     form: formReducer,
@@ -12,7 +14,9 @@ const rootReducer = combineReducers({
     user: overallData,
     register: registerReducer,
     dayTodos,
-    monthTodos
+    monthTodos,
+    longTodos,
+    router: routerReducer
 })
 
 export default rootReducer;

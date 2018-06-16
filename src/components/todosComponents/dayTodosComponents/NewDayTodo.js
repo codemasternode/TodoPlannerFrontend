@@ -35,6 +35,11 @@ class NewDayTodo extends React.Component {
 
             return arrayToFilter
         })
+        this.setState({
+            title: '',
+            endAt: '',
+            startsAt: ''
+        })
     }
 
     handelChange(e) {
@@ -47,15 +52,15 @@ class NewDayTodo extends React.Component {
 
         return (
             <form onSubmit={this.onSubmit.bind(this)} className="form-days">
-                <input type="text" name="title" placeholder="Co byś chciał dodać?" onChange={this.handelChange.bind(this)} />
+                <input type="text" name="title" placeholder="Co byś chciał dodać?" onChange={this.handelChange.bind(this)} value={this.state.title} />
                 <div className="form-group">
                     <div>
                         <label>Od</label>
-                        <input type="time" name="startsAt" onChange={this.handelChange.bind(this)} />
+                        <input type="time" value={this.state.startsAt} name="startsAt" onChange={this.handelChange.bind(this)} />
                     </div>
                     <div>
                         <label>Do</label>
-                        <input type="time" name="endAt" onChange={this.handelChange.bind(this)} />
+                        <input type="time" name="endAt" value={this.state.endAt} onChange={this.handelChange.bind(this)} />
                     </div>
                 </div>
                 <button type="submit">Dodaj</button>

@@ -8,12 +8,6 @@ export function logoutOnSuccess() {
     }
 }
 
-export function logoutOnFailed() {
-    return {
-        type: logoutFailed
-    }
-}
-
 export default function logoutUser(callback) {
     return (dispatch) => {
         localStorage.clear()

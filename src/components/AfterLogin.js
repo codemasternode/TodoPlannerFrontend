@@ -25,7 +25,7 @@ class AfterLogin extends React.Component {
         return (
             <div className="after-login">
                 <div className="toDashboard">
-                    <Link to='/dashboard'>{this.props.user.email}</Link>
+                    <Link to='/dashboard/dayTodo'>{this.props.user.email}</Link>
                 </div>
                 <button onClick={this.logoutUser.bind(this)}>Wyloguj</button>
             </div>

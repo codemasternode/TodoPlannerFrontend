@@ -33,7 +33,7 @@ class LoginForm extends React.Component {
 
     onSubmit(e) {
         this.props.loginUser(e, () => {
-            this.props.history.push('/dashboard')
+            this.props.history.push('/dashboard/dayTodo')
         })
 
     }

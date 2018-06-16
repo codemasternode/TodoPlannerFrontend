@@ -16,14 +16,18 @@ class Dashboard extends React.Component {
     render() {
         if (!this.props.loginResult.authenticated) {
             return <Redirect to="/login" />
-        } 
+        }
         return (
-            <div className="container">
-                <TodoNav />
-                <Route path="/dashboard/dayTodo" component={DayTodos} />
-                <Route path="/dashboard/monthTodo" component={MonthTodos} />
-                <Route path="/dashboard/longTodo" component={LongTodos} />
-
+            <div >
+                <BrowserRouter>
+                    <div className="container">
+                        <TodoNav />
+                        <Route exact path="/dashboard/dayTodo" component={DayTodos} />
+                        <Route path="/dashboard/monthTodo" component={MonthTodos} />
+                        <Route path="/dashboard/longTodo" component={LongTodos} />
+                        
+                    </div>
+                </BrowserRouter>
             </div>
 
         )

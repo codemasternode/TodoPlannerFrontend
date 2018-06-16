@@ -22,7 +22,8 @@ function update(values) {
         method: 'PUT',
         headers: {
             'x-auth': localStorage.getItem('tokenAuth')
-        }
+        },
+        data: values
     }
 
     return axios(`${rootURL}/updateLongTodo`, requestOptions)

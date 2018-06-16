@@ -7,7 +7,11 @@ import { updateLongTodo } from '../../../actions/longTodos'
 class Content extends React.Component {
 
     blur(e) {
-        this.props.updateLongTodo({ when: this.props.index, title: e })
+        const email = localStorage.getItem('user_email')
+        if (email !== null || email != undefined) {
+            this.props.updateLongTodo({ when: this.props.index, title: e, email })
+        }
+
     }
 
     click(e) {

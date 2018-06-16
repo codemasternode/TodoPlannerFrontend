@@ -209,6 +209,9 @@
     justify-content: center;
     border: 2px solid $primary-color;
     width: 100%;
+    &:hover{
+        cursor: pointer;
+    }
 }
 
 

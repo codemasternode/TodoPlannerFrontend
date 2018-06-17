@@ -9,4 +9,4 @@ export const TodosConsts = {
     LONG_UPDATE_FAILED: 'LONG_UPDATE_FAILED'
 }
 
-export const rootURL = 'http://localhost:8080'
+export const rootURL = 'https://boiling-sands-54275.herokuapp.com'

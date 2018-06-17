@@ -19,7 +19,7 @@ export function loginOnFailed(payload) {
 
 export default function loginUser(values, callback) {
     return (dispatch) => {
-        axios.post('http://localhost:8080/auth', values)
+        axios.post('https://boiling-sands-54275.herokuapp.com/auth', values)
             .then((res) => {
                 if (res.data.success) {
                     localStorage.setItem('tokenAuth', res.data.token)

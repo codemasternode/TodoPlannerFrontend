@@ -35,7 +35,7 @@ export function successAdd(todo) {
 
 export function fetchMonthTodos() {
     return (dispatch) => {
-        axios('http://localhost:8080/allMonthTodos', {
+        axios('https://boiling-sands-54275.herokuapp.com/allMonthTodos', {
             method: 'GET',
             headers: {
                 'x-auth': localStorage.getItem('tokenAuth')
@@ -50,7 +50,7 @@ export function fetchMonthTodos() {
 
 export function deleteMonthTodo(id) {
     return (dispatch) => {
-        axios(`http://localhost:8080/deleteMonthTodo/${id}`, {
+        axios(`https://boiling-sands-54275.herokuapp.com/deleteMonthTodo/${id}`, {
             method: 'DELETE',
             headers: {
                 'x-auth': localStorage.getItem('tokenAuth')
@@ -64,7 +64,7 @@ export function deleteMonthTodo(id) {
 export function addMonthTodo(values) {
     console.log(values)
     return (dispatch) => {
-        axios('http://localhost:8080/newMonthTodo', {
+        axios('https://boiling-sands-54275.herokuapp.com/newMonthTodo', {
             method: 'POST',
             data: values,
             headers: {

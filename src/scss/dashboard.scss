@@ -1,11 +1,22 @@
 @import "variables";
 
+%row {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+%column {
+    display: flex;
+    flex-direction: column;
+}
+
 .todo-nav {
     width: 100%;
     margin-bottom: 50px;
     padding-left: 5em;
     ul {
-        display: flex;
+        @extend %row;
         justify-content: flex-start;
     }
 }
@@ -46,15 +57,13 @@
 
 .days-wrapper {
     width: 80%;
-    display: flex;
-    flex-direction: column;
+    @extend %column;
     margin-left: auto;
     margin-right: auto;
 }
 
 .day {
-    display: flex;
-    align-items: center;
+    @extend %row;
     justify-content: space-between;
     border-radius: 5px;
     margin-top: 20px;
@@ -73,23 +82,18 @@
 }
 
 .toggle {
-    display: flex;
+    @extend %column;
     align-items: center;
-    flex-direction: column;
+    
     ul {
         width: 100%;
-        display: flex;
-        flex-direction: column;
+        @extend %column;
         justify-content: center;
         padding: 3em 2em;
-
     }
 }
-
-
 .todo {
-    display: flex;
-    align-items: center;
+    @extend %row;
     justify-content: space-around;
     margin-top: 5px;
 }
@@ -98,12 +102,12 @@
     width: 50%;
     padding: 5em 2em;
     padding-bottom: 0;
-    display: flex;
+    @extend %column;
     justify-content: space-between;
 }
 
 .form-group {
-    display: flex;
+    @extend %row;
     justify-content: space-around;
 }
 
@@ -143,10 +147,10 @@
 
 
 .cell {
-    display: flex;
+    
     height: 50px;
     justify-content: space-around;
-    flex-direction: row;
+    @extend %row;
     border: $border-nav;
     align-items: center;
     &:hover {

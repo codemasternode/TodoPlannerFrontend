@@ -53,7 +53,7 @@ export function failedAddTodo() {
 
 export function deleteDayTodo(_id) {
     return (dispatch) => {
-        axios(`http://localhost:8080/deleteDayTodo/${_id}`, {
+        axios(`https://boiling-sands-54275.herokuapp.com/deleteDayTodo/${_id}`, {
             method: 'DELETE',
             headers: {
                 'x-auth': localStorage.getItem('tokenAuth')
@@ -68,7 +68,7 @@ export function deleteDayTodo(_id) {
 
 export function fetchDayTodos(nowTime, addTime, callback, rej) {
     return (dispatch) => {
-        axios('http://localhost:8080/allDayTodos', {
+        axios('https://boiling-sands-54275.herokuapp.com/allDayTodos', {
             method: 'GET',
             headers: {
                 'x-auth': localStorage.getItem('tokenAuth')
@@ -84,7 +84,7 @@ export function fetchDayTodos(nowTime, addTime, callback, rej) {
 
 export function addDayTodo(todo) {
     return (dispatch) => {
-        axios('http://localhost:8080/newDayTodo', {
+        axios('https://boiling-sands-54275.herokuapp.com/newDayTodo', {
             method: 'POST',
             headers: {
                 'x-auth': localStorage.getItem('tokenAuth')

@@ -21,7 +21,7 @@ export function failedFetchCred() {
 export default function fetchCredentials() {
     return (dispatch) => {
         if (localStorage.getItem('user_email') == undefined) {
-            axios.get('http://localhost:8080/verify/me', {
+            axios.get('https://boiling-sands-54275.herokuapp.com/verify/me', {
                 headers: {
                     'x-auth': localStorage.getItem('tokenAuth')
                 }
